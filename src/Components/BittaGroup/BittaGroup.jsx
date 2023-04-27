@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import "./BittaGroup.css";
 import axios from "axios";
 // import {Contextbar} from './Guruxlar'
+import { useParams } from "react-router-dom"; 
 
 export default function BittaGuruh() {
   // const contex = useContext(Contextbar)
