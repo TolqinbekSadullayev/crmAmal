@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@200;300;400;500;600;700&family=Montserrat:wght@200;300;400;500;700;800&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.fon {
+    background-color: #F5F5F5;
+}
+
+.bittaXona {
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+    padding: 10px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.web_sanahifa {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 10px;
+}
+
+.engliw_beginner {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    color: #455B66;
+}
+
+.web_col {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 10px 0;
+}
+
+.nomi {
+    padding: 0;
+    margin: 0;
+    color: #617E8C;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.qiymati {
+    padding: 0;
+    margin: 0;
+    color: #253238;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.hr{
+    background-color: #253238;
+}

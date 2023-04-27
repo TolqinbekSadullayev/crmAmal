@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Inter:wght@200;300;400;500;600;700&family=Montserrat:wght@200;300;400;500;700;800&family=Roboto:wght@300;400;500;700;900&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,900&display=swap');
+
+.guruh_fon {
+    background-color: #F5F5F5;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.guruhlar_title_name_left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+}
+
+.guruhlar_name {
+    font-weight: 600;
+    font-size: 35px;
+    padding: 35px 0 18px 0;
+}
+
+.active_group {
+    font-size: 18px;
+    font-weight: 400;
+    display: flex;
+    gap: 16px;
+    font-weight: 600;
+    color: #455B66;
+    padding-bottom: 8px;
+    transition: all ease-in-out .3s;
+    cursor: pointer;
+}
+
+.active {
+    color: #7338AC;
+    cursor: pointer;
+    border-bottom: 2px solid #7338AC;
+    padding: 0 0 8px 0;
+}
+
+.archive {
+    border-bottom: 2px solid #7338AC;
+    padding: 0 0 8px 0;
+    color: #7338AC;
+    cursor: pointer;
+}
+
+.btn_col {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.add_btn {
+    width: 152px;
+    height: 39px;
+    padding: 5px;
+    background: #7338AC;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    transition: all ease .4s;
+}
+
+.add_btn:hover {
+    background-color: #693599;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.guruhlar_table {
+    background-color: #fff;
+    margin: 40px 0;
+}
+
+.table_title {
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 22px !important;
+}
+
+.item {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    padding: 15px 10px !important;
+}
+
+/* offcanvas style */
+
+.offcanvas_header_border {
+    border-bottom: 2px solid rgba(97, 126, 140, 0.153) !important;
+    padding: 20px 5px !important;
+    margin: 0 auto;
+    width: 85%;
+}
+
+.offcanvas_title_guruh {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 22px;
+
+}
+
+.form_div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0 20px 15px 20px;
+}
+
+.label_guruh {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 14px;
+    color: #151617;
+    padding-bottom: 3px;
+}
+
+.input_guruh {
+    border: 1px solid #565d6086;
+    border-radius: 7px;
+    padding: 5px 16px 5px 10px;
+}
+
+.input_guruh:focus {
+    outline: 1px solid #b3c4cc4c;
+}
+
+.input_guruh::placeholder {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #000000d8;
+}
+
+.select_guruh {
+    position: relative;
+    border: 1px solid #617E8C;
+    border-radius: 10px;
+    padding: 5px 16px 5px 10px;
+}
+
+.select_guruh:focus {
+    outline: 1px solid #617e8c43 !important;
+    box-shadow: none !important;
+}
+
+.selectpicker:after {
+    position: absolute;
+    content: '';
+    color: red;
+}
+
+.yuborish_btn {
+    padding: 5px 10px;
+    background: #7338AC;
+    border-radius: 8px;
+    border: none;
+    color: #fff;
+    transition: all ease .4s;
+    margin-left: 24px;
+}
+
+.yuborish_btn:hover {
+    background-color: #693599;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}

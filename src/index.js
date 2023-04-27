@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './Components/Home/Home';
 import Guruxlar from './Components/Group/Guruxlar';
@@ -10,6 +11,7 @@ import Moliya from './Components/Moliya/Moliya';
 import Hodimlar from './Components/Staffs/Hodimlar';
 import Talabalar from './Components/Talabalar/Talabalar'
 import Xonalar from './Components/Xonalar/Xonalar'
+import BittaGroup from './Components/BittaGroup/BittaGroup'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -23,6 +25,8 @@ root.render(
             <Route path="/hodimlar" element={<Hodimlar/>}/>
             <Route path="/talabalar" element={<Talabalar/>}/>
             <Route path="/xonalar" element={<Xonalar/>}/>
+            
+            <Route path='/bittaGroup/:teacher' element={<BittaGroup/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
