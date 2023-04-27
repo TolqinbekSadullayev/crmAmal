@@ -11,6 +11,7 @@ import Hodimlar from './Components/Staffs/Hodimlar';
 import Talabalar from './Components/Talabalar/Talabalar'
 import Xonalar from './Components/Xonalar/Xonalar'
 import Davomat from './Components/Davomat/Davomat'
+import Xarajat from './Components/Moliya/Xarajat/Xarajat'
 import {Provider} from 'react-redux'
 import {store} from './Components/Store/Store'
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,7 +24,7 @@ root.render(
           <Route path="/" element={<App />}>
             <Route path="/" element={<Home/>}/>
             <Route path="/guruxlar" element={<Guruxlar/>}/>
-            {/* <Route path="/moliya" element={<Xarajat/>}/> */}
+            <Route path="/xarajat" element={<Xarajat/>}/>
             <Route path="/hodimlar" element={<Hodimlar/>}/>
             <Route path="/talabalar" element={<Talabalar/>}/>
             <Route path="/xonalar" element={<Xonalar/>}/>
