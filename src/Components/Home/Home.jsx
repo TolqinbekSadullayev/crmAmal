@@ -4,7 +4,7 @@ import "./Home.css";
 export default function Home() {
   return (
     <div className="">
-      <div className="d-flex">
+      <div className="d-flex justify-content-around mt-3">
       <div className="divlar1">
         <h1>56</h1>
         <h6>Hodimlar</h6>
