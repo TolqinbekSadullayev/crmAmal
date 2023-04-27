@@ -1,0 +1,69 @@
+.Navbarleft {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: large;
+  font-style: bold;
+}
+
+.Navbarleft ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Navbarleft li {
+  flex: 1;
+  text-align: center;
+}
+
+.Navbarleft li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+}
+
+.Navbarleft li a:hover {
+  background-color: #4561cf;
+  color: black;
+  border-radius: 0 0 10px 10px;
+}
+.chiq{
+  padding: 14px 16px;
+}
+.chiq  a{
+  text-decoration: none;
+ color: black;
+}
+.chiq a:hover {
+  color: black;
+}
+.top_section{
+  padding: 14px 16px;
+}
+.logo{
+  display: inline-flex;
+}
+.logoimg{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+
+}
+.input_div{
+  border-radius: 20px;
+  background-color: rgb(240, 232, 232);
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+}
+.input_div input{
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(240, 232, 232);
+ width: 300px;
+}
