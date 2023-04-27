@@ -2,6 +2,7 @@ import React, { useEffect, useState, createContext } from "react";
 import "./Group.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 
 export default function Guruxlar() {
@@ -20,6 +21,9 @@ export default function Guruxlar() {
   const [boshlanishDarsVaqti, setDarsVaqt] = useState('')
   const [kursBoshSana, setKurSana] = useState('')
   const [gurug_index, setguruh] = useState('')
+  const dispatch = useDispatch()
+
+
   useEffect(() => {
     axios
       .get("https://api.npoint.io/15ec254a9a4c2a0fcb6c")
@@ -39,6 +43,23 @@ export default function Guruxlar() {
   function archive() {
     setActiv(!activ);
   }
+  // adduser()
+  // function adduser() {
+  //   axios
+  //   .post('https://644a7136a8370fb3214ec646.mockapi.io/nimadr/rooms',{
+  //     'name': 'user12',
+  //     'number': '339721212',
+  //     'Status': 'true',
+  //     'days': '23-yan'
+  //   })
+  //   .then(r=>{
+  //     console.log(r , 'poas');
+  //   })
+  //   .catch(e=>{
+  //     console.log(e);
+  //   })
+
+  // }
 
   function Yuborish_btn(){
     
@@ -56,6 +77,7 @@ export default function Guruxlar() {
         kurs_boshlanish_sanasi: kursBoshSana,
       })
       console.log(current, 'bu currrent');
+      dispatch({type: 'add', payload: current})
     setGroupData(current)
   }
 
@@ -107,13 +129,13 @@ export default function Guruxlar() {
                
                  <tr value={item} className={activ ? "" : "d-none"} onClick={() =>  Guruh(item)}>
                   <td className="item">{item.id}</td>
-                  <Link to={`/bittaGroup/:${item.name}`} style={linkStyle}>
+                  <Link to={`/davomat/${item.name}`} state={item} style={linkStyle}>
                   <td className="item">{item.name}</td>
                   </Link>
-                  
                   <td className="item">{item.teacher}</td>
                   <td className="item">{item.time}</td>
                   <td className="item">{item.days}</td>
+
                 </tr>
               
               //  </Contextbar.Provider>

@@ -1,18 +1,20 @@
 import React, { useContext, useState, useEffect } from "react";
-import "./BittaGroup.css";
+import "./Davomat.css";
 import axios from "axios";
 // import {Contextbar} from './Guruxlar'
-import { useParams } from "react-router-dom"; 
+import { useLocation } from "react-router-dom"; 
 
 export default function BittaGuruh() {
   // const contex = useContext(Contextbar)
   // console.log(contex);
+  const id = useLocation()
+  console.log(id.state.id, 'bu id');
   const [groupData, setGroupData] = useState([]);
   useEffect(() => {
     axios
       .get("https://api.npoint.io/15ec254a9a4c2a0fcb6c")
       .then((ress) => {
-        console.log(ress.data);
+        console.log(ress.data , 'bu data');
         setGroupData(ress.data);
       })
       .catch((err) => {

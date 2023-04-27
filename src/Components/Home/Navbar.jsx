@@ -5,9 +5,38 @@ import {FaUserTie, FaMonero,FaUserGraduate} from "react-icons/fa";
 import {MdMeetingRoom} from "react-icons/md";
 import {ImExit} from "react-icons/im";
 import "./Navbar.css";
+import { Button, Dropdown } from 'antd';
 
 import { Link } from "react-router-dom";
 export default function Navbar() {
+  const items = [
+    {
+      key: '1',
+      label: (
+        <a  rel="noopener noreferrer" href="/">
+          Account haqida
+        </a>
+      ),
+    },
+    {
+      key: '2',
+      label: (
+        <a  rel="noopener noreferrer" href="/">
+          Boshqa account
+        </a>
+      ),
+    },
+    {
+      key: '3',
+      label: (
+        <a  rel="noopener noreferrer" href="/">
+          Chiqish
+        </a>
+      ),
+    },
+  ];
+
+
   return (
     <div>
       
@@ -30,11 +59,24 @@ export default function Navbar() {
                 <Link to={"/talabalar"}><a href="#"><FaUserGraduate/> Talabalar</a></Link>
               </li>
               <li>
-                <Link to={"/moliya"}><a href="#"><FaMonero/>  Moliya</a></Link>
+                <Link to={"/xarajat"}><a href="#"><FaMonero/>  Moliya</a></Link>
               </li>
             </ul>
           </div>
-          <div className="chiq"><Link><a href=""><ImExit/> chiqish</a></Link></div>
+          <div className="chiq">
+            {/* <Link><a href=""><ImExit/> chiqish</a></Link> */}
+            <Dropdown
+      menu={{
+        items,
+      }}
+      placement="top"
+      arrow={{
+        pointAtCenter: true,
+      }}
+    >
+      <Button><ImExit/>   chiqish</Button>
+    </Dropdown>
+          </div>
         </div>
     </div>
   );
