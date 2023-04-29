@@ -1,27 +1,27 @@
 import React, { useContext, useState, useEffect } from "react";
 import "./Davomat.css";
 import axios from "axios";
-// import {Contextbar} from './Guruxlar'
-import { useLocation } from "react-router-dom"; 
+import { useParams } from "react-router-dom"; 
 
 export default function BittaGuruh() {
-  // const contex = useContext(Contextbar)
-  // console.log(contex);
-  const id = useLocation()
-  console.log(id.state.id, 'bu id');
-  const [groupData, setGroupData] = useState([]);
+  const id = useParams()
+  console.log(id.id, 'bu id');
+  const [obj, setGroupObj] = useState();
   useEffect(() => {
     axios
-      .get("https://api.npoint.io/15ec254a9a4c2a0fcb6c")
+      .get(`https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group`)
       .then((ress) => {
         console.log(ress.data , 'bu data');
-        setGroupData(ress.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
+       let object =  ress.data.find((item, index) =>{
+              return (item.id == id.id)
+            })
+            setGroupObj(object)
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        }, []);
+        console.log(obj);
   return (
     <div className="container fon">
       <div className="bittaXona ">
@@ -56,16 +56,9 @@ export default function BittaGuruh() {
                  <p className="nomi">Boshlanish sanasi:</p>
                   <h5 className="qiymati">2021-01-01</h5>
                  </div>
-                 <hr className="hr"/>
-               
-          {groupData &&
-            groupData.map((item, index) => {
-              return (
-              <div key={index}>
-                
-              </div>
-              );
-            })}
+                <p className="hr"></p>
+                .
+          
              </div>
         </div>
         <div className="col-9"></div>
