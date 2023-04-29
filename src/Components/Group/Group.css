@@ -76,7 +76,8 @@
     font-family: 'Inter' !important;
     font-style: normal;
     font-weight: 600 !important;
-    font-size: 22px !important;
+    font-size: 19px !important;
+    padding: 18px 27px 14px 31px !important;
 }
 
 .item {
@@ -85,8 +86,52 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 130%;
-    padding: 15px 10px !important;
+    padding: 18px 27px 14px 31px !important;
 }
+
+
+/* delet and edit */
+.icon{
+    font-size: 20px;
+}
+
+.list{
+    position: absolute;
+    border: 1px solid #c0bebe4a;
+    right: 64px;
+    top: 32px;
+    z-index: 999;
+    border-radius: 10px;
+    background-color: #fbf8f8 !important;
+    width: 135px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.delete{
+    font-weight: 600;
+    margin: 0;
+    padding: 2px 4px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.delet_icon{
+    color: #693599;
+}
+
+.edit{
+    font-weight: 600;
+    padding: 2px 4px;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+.input_guruh::placeholder{
+    font-weight: 600 !important;
+    color: #ccc !important;
+}
+
+
+
 
 /* offcanvas style */
 
@@ -163,9 +208,23 @@
     color: #fff;
     transition: all ease .4s;
     margin-left: 24px;
+    width: 100px !important;
 }
 
 .yuborish_btn:hover {
-    background-color: #693599;
+    background-color: #745592ec;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+.td_width{
+    width: 150px !important;
+}
+
+.edit_off{
+    background-color: #745592ec !important;
+    transition: all .5s;
+}
+.edit_off:hover{
+    background-color: #693599 !important;
 }

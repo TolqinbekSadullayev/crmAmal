@@ -1,41 +1,127 @@
-import React, { useEffect, useState, createContext } from "react";
+import React, { useEffect, useState } from "react";
 import "./Group.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-
+import { HiDotsVertical } from "react-icons/hi";
+import { MdOutlineAutoDelete } from "react-icons/md";
+import { FiEdit } from "react-icons/fi";
 
 export default function Guruxlar() {
   const linkStyle = {
     textDecoration: "none",
-    color: 'black'
+    color: "black",
   };
-  const Contextbar = createContext()
   const [groupData, setGroupData] = useState([]);
   const [activ, setActiv] = useState(true);
-  const [kursNomi, setKursNomi] = useState('')
-  const [kurs, setKurs] = useState('')
-  const [oqituvchi, setOqituvchi] = useState('')
-  const [kun, setKun] = useState('')
-  const [xona, setXona] = useState('')
-  const [boshlanishDarsVaqti, setDarsVaqt] = useState('')
-  const [kursBoshSana, setKurSana] = useState('')
-  const [gurug_index, setguruh] = useState('')
-  const dispatch = useDispatch()
+  const [id_put, setId_put] = useState(0)
 
+  const [kursNomi, setKursNomi] = useState("");
+  const [kurs, setKurs] = useState("Front-End");
+  const [oqituvchi, setOqituvchi] = useState("Zufarbek Abdurahmonov");
+  const [kun, setKun] = useState("Juft kunlar");
+  const [xona, setXona] = useState("1-xona");
+  const [boshlanishDarsVaqti, setDarsVaqt] = useState("10:00");
+  const [kursBoshSana, setKurSana] = useState("");
+  const [kursTugashSana, setTugashSana] = useState("");
 
   useEffect(() => {
     axios
-      .get("https://api.npoint.io/15ec254a9a4c2a0fcb6c")
+      .get("https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group")
       .then((ress) => {
-        console.log(ress.data);
+        console.log(ress.data, 'bu get data ');
+        ress.data.map((item, index) => {
+          item.icon = false
+        });
         setGroupData(ress.data);
       })
       .catch((err) => {
         console.log(err);
       });
+      Edit_off()
   }, []);
 
+
+ function Yuborish_btn() {
+     axios
+      .post("https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group", 
+      {
+        name: kursNomi,
+        teacher: oqituvchi,
+        time: boshlanishDarsVaqti,
+        days: kun,
+        kurs: kurs,
+        bosh_sana: kursBoshSana,
+        tugash_sana: kursTugashSana,
+        status: true,
+        count: true,
+        xona: xona,
+        icon: false
+      })
+      .then((ress) => {
+        console.log(ress, "post");
+        let post_data = [...groupData]
+        post_data.push(ress.data)
+        setGroupData(post_data)
+
+        setKursNomi('')
+        setKurSana('')
+        setTugashSana('')
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  function Delete(id, index) {
+    axios
+    .delete(`https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group/${id}`)
+    .then(ress => {
+      console.log(ress.data);
+    let  filter_data = groupData.filter((item, index) => {
+        return (item.id != id)
+       })
+       setGroupData(filter_data)
+    })
+    .catch(err => {
+      console.log(err);
+    })
+     let current = [...groupData];
+     current[index].icon = false;
+     setGroupData(current);
+    }
+
+    function Edit_off() {
+      axios
+      .put(`https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group/${id_put}`,
+      {
+        name: kursNomi,
+        teacher: oqituvchi,
+        time: boshlanishDarsVaqti,
+        days: kun,
+        kurs: kurs,
+        bosh_sana: kursBoshSana,
+        tugash_sana: kursTugashSana,
+        status: true,
+        count: true,
+        xona: xona,
+        icon: false
+      })
+
+      .then(ress => {
+        console.log(ress.data)
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    }
+
+    function Edit(id,index) {
+      let current = [...groupData];
+      current[index].icon = false;
+      setId_put(id)
+      setGroupData(groupData);
+    }
+  
   function activee() {
     setActiv(!activ);
   }
@@ -43,54 +129,18 @@ export default function Guruxlar() {
   function archive() {
     setActiv(!activ);
   }
-  // adduser()
-  // function adduser() {
-  //   axios
-  //   .post('https://644a7136a8370fb3214ec646.mockapi.io/nimadr/rooms',{
-  //     'name': 'user12',
-  //     'number': '339721212',
-  //     'Status': 'true',
-  //     'days': '23-yan'
-  //   })
-  //   .then(r=>{
-  //     console.log(r , 'poas');
-  //   })
-  //   .catch(e=>{
-  //     console.log(e);
-  //   })
 
-  // }
-
-  function Yuborish_btn(){
-    
-    console.log('ishla');
-    let current = [...groupData]
-      current.push({
-        days:kun,
-        id:1233,
-        name: kursNomi,
-        status: true,
-        teacher: oqituvchi,
-        time:boshlanishDarsVaqti,
-        kurs: kurs,
-        xona: xona,
-        kurs_boshlanish_sanasi: kursBoshSana,
-      })
-      console.log(current, 'bu currrent');
-      dispatch({type: 'add', payload: current})
-    setGroupData(current)
+    function button_icon(index) {
+      let current = [...groupData];
+      current[index].icon = true;
+    setGroupData(current);
   }
-
-  function Guruh(item) {
-    console.log(item);
-  }
-
 
   return (
     <div className="container border guruh_fon">
       <div className="row">
         <div className="col-6 guruhlar_title_name_left">
-          <h2 className="guruhlar_name" >Guruhlar</h2>
+          <h2 className="guruhlar_name">Guruhlar</h2>
           <div className="active_group">
             <span className={activ ? "active" : ""} onClick={activee}>
               Active
@@ -114,38 +164,116 @@ export default function Guruxlar() {
       <table class="table guruhlar_table">
         <thead>
           <tr>
-            <th scope="col table_title">Id</th>
-            <th scope="col table_title">Name</th>
-            <th scope="col table_title">Teacher</th>
-            <th scope="col table_title">Time</th>
-            <th scope="col table_title">Days</th>
+            <th scope="col" className="table_title">
+              Id
+            </th>
+            <th scope="col" className="table_title">
+              Name
+            </th>
+            <th scope="col" className="table_title">
+              Teacher
+            </th>
+            <th scope="col" className="table_title">
+              Time
+            </th>
+            <th scope="col" className="table_title">
+              Days
+            </th>
+            <th scope="col" className="table_title"></th>
           </tr>
         </thead>
         <tbody>
           {groupData ? (
             groupData.map((item, index) => {
-              return item.status ? (
-              //  <Contextbar.Provider>
-               
-                 <tr value={item} className={activ ? "" : "d-none"} onClick={() =>  Guruh(item)}>
+              return (item.status) ? (
+                <tr
+                  value={item}
+                  className={activ ? "" : "d-none"}
+                  style={{ position: "relative" }}
+                >
                   <td className="item">{item.id}</td>
-                  <Link to={`/davomat/${item.name}`} state={item} style={linkStyle}>
-                  <td className="item">{item.name}</td>
-                  </Link>
+                  <td className="item width_name">
+                    <Link
+                      to={`/davomat/${item.id}`}
+                      state={item}
+                      style={linkStyle}
+                    >
+                      {item.name}
+                    </Link>
+                  </td>
                   <td className="item">{item.teacher}</td>
                   <td className="item">{item.time}</td>
                   <td className="item">{item.days}</td>
-
+                  <td className="item" style={{ cursor: "pointer" }} onClick={() => button_icon(index)} >
+                    <p className="icon">
+                      <HiDotsVertical />
+                    </p>
+                  </td>
+                  <div className={item.icon ? "list" : "d-none"}>
+                    <p
+                      style={{ cursor: "pointer" }}
+                      onClick={() => Delete(item.id, index)}
+                      className="delete"
+                    >
+                      <span className="delet_icon">
+                        <MdOutlineAutoDelete />
+                      </span>
+                      Delete
+                    </p>
+                    <p
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#offcanvasRight"
+                      aria-controls="offcanvasRight"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => Edit(item.id, index)}
+                      className="edit"
+                    >
+                      <span className="delet_icon">
+                        <FiEdit />{" "}
+                      </span>{" "}
+                      Edit
+                    </p>
+                  </div>
                 </tr>
-              
-              //  </Contextbar.Provider>
               ) : (
-                <tr className={activ ? "d-none" : ""}>
+                <tr
+                  style={{ position: "relative" }}
+                  className={activ ? "d-none" : ""}
+                >
                   <td className="item">{item.id}</td>
                   <td className="item">{item.name}</td>
                   <td className="item">{item.teacher}</td>
                   <td className="item">{item.time}</td>
                   <td className="item">{item.days}</td>
+                  <td
+                    onClick={() => button_icon(index)}
+                    className="item"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <p className="icon">
+                      <HiDotsVertical />
+                    </p>
+                  </td>
+                  <div className={item.icon ? "list" : "d-none"}>
+                    <p
+                      style={{ cursor: "pointer" }}
+                      onClick={() => Delete(item.id,index)}
+                      className="delete"
+                    >
+                      <span className="delet_icon">
+                        <MdOutlineAutoDelete />
+                      </span>{" "}
+                      Delete
+                    </p>
+                    <p style={{ cursor: "pointer" }} className="edit"  onClick={() => Edit(item.id,index)}  data-bs-toggle="offcanvas"
+                      data-bs-target="#offcanvasRight"
+                      aria-controls="offcanvasRight">
+                      <span className="delet_icon">
+                        <FiEdit />{" "}
+                      </span>{" "}
+                      Edit
+                    </p>
+                  </div>
                 </tr>
               );
             })
@@ -164,7 +292,10 @@ export default function Guruxlar() {
         aria-labelledby="offcanvasRightLabel"
       >
         <div class="offcanvas-header offcanvas_header_border ">
-          <h5 class="offcanvas-title offcanvas_title_guruh" id="offcanvasRightLabel">
+          <h5
+            class="offcanvas-title offcanvas_title_guruh"
+            id="offcanvasRightLabel"
+          >
             Yangi guruh qo'shish
           </h5>
           <button
@@ -175,69 +306,151 @@ export default function Guruxlar() {
           ></button>
         </div>
         <div class="offcanvas-body">
-          
-        <form action="" style={{textAlign:'left'}}>
-          <div className="form_div">
-            <label htmlFor="" className="label_guruh">Kurs nomi</label>
-            <input type="text" className="input_guruh" placeholder='Front-End' onInput={(val) => setKursNomi(val.target.value)} />
-          </div>
+          <form action="" style={{ textAlign: "left" }}>
+            <div className="form_div">
+              <label htmlFor="" className="label_guruh">
+                Guruh nomini yozing
+              </label>
+              <input
+                type="text"
+                className="input_guruh"
+                placeholder="Guruh nomini yozing"
+                onInput={(val) => setKursNomi(val.target.value)}
+              />
+            </div>
 
-          <div className="form_div">
-            <label htmlFor="" className="label_guruh">Kurs tanlash</label>
-           <select   class="form-select select_guruh" onChange={(val) => setKurs(val.target.value)}>
-            <option value="front-end">Front-End</option>
-            <option value="back-end">Back-End</option>
-            <option value="phyton">Phyton</option>
-            <option value="web-beginner">Web site-beginner</option>
-           </select>
-          </div>
+            <div className="form_div">
+              <label htmlFor="" className="label_guruh">
+                Kurs tanlash
+              </label>
+              <select
+              value={"front-end"}
+                class="form-select select_guruh"
+                onChange={(val) => setKurs(val.target.value)}
+              >
+                <option selected value="front-end">
+                  Front-End
+                </option>
+                <option value="back-end">Back-End</option>
+                <option value="phyton">Phyton</option>
+                <option value="web-beginner">Web site-beginner</option>
+              </select>
+            </div>
 
-          <div className="form_div">
-            <label htmlFor="" className="label_guruh">O'qituvchini tanlang</label>
-           <select class="form-select select_guruh" onChange={(val) => setOqituvchi(val.target.value)} >
-            <option value="Zufarbek Abdurahmonov">Zufarbek Abdurahmonov</option>
-            <option value="Sheroz Turdiyev">Sheroz Turdiyev</option>
-            <option value="Asadbek Shorahimov">Asadbek Shorahimov</option>
-            <option value="Nurilloh Ubaydullayev">Nurilloh Ubaydullayev</option>
-           </select>
-          </div>
+            <div className="form_div">
+              <label htmlFor="" className="label_guruh">
+                O'qituvchini tanlang
+              </label>
+              <select
+              defaultValue={'Zufarbek Abdurahmonov'}
+                class="form-select select_guruh"
+                onChange={(val) => setOqituvchi(val.target.value)}
+              >
+                <option selected value="Zufarbek Abdurahmonov">
+                  Zufarbek Abdurahmonov
+                </option>
+                <option value="Sheroz Turdiyev">Sheroz Turdiyev</option>
+                <option value="Asadbek Shorahimov">Asadbek Shorahimov</option>
+                <option value="Nurilloh Ubaydullayev">
+                  Nurilloh Ubaydullayev
+                </option>
+              </select>
+            </div>
 
-          <div className="form_div">
-            <label htmlFor="" className="label_guruh">Kunlar</label>
-           <select class="form-select select_guruh" onChange={(val) => setKun(val.target.value)} >
-            <option value="juft-kunlar">Juft Kunlar</option>
-            <option value="toq-kunlar">Toq kunlar</option>
-           </select>
-          </div>
+            <div className="form_div">
+              <label htmlFor="" className="label_guruh">
+                Kunlar
+              </label>
+              <select
+                class="form-select select_guruh"
+                onChange={(val) => setKun(val.target.value)}
+              >
+                <option selected value='juft kunlar'>
+                  Juft Kunlar
+                </option>
+                <option value='toq kunlar'>Toq kunlar</option>
+              </select>
+            </div>
 
-          <div className="form_div">
-            <label htmlFor="" className="label_guruh">Xonani tanlang</label>
-           <select class="form-select select_guruh" onChange={(val) => setXona(val.target.value)} >
-            <option value="1-xona">1-xona</option>
-            <option value="2-xona">2-xona</option>
-            <option value="3-xona">3-xona</option>
-            <option value="4-xona">4-xona</option>
-           </select>
-          </div>
+            <div className="form_div">
+              <label htmlFor="" className="label_guruh">
+                Xonani tanlang
+              </label>
+              <select
+                class="form-select select_guruh"
+                onChange={(val) => setXona(val.target.value)}
+              >
+                <option selected value="1-xona">
+                  1-xona
+                </option>
+                <option value="2-xona">2-xona</option>
+                <option value="3-xona">3-xona</option>
+                <option value="4-xona">4-xona</option>
+              </select>
+            </div>
 
-          <div className="form_div">
-            <label htmlFor="" className="label_guruh">Darsning boshlanish vaqti</label>
-            <select class="form-select select_guruh" onChange={(val) => setDarsVaqt(val.target.value)} >
-            <option value="10:00">10:00</option>
-            <option value="14:00">14:00</option>
-            <option value="16:00">16:00</option>
-            <option value="18:30">18:30</option>
-           </select>
-          </div>
-          
-          <div className="form_div">
-            <label htmlFor="" className="label_guruh">Guruh boshqarish sanasi</label>
-            <input type="text" placeholder="Sanani yozing" className="input_guruh" onInput={(val) => setKurSana(val.target.value)} />
-          </div>
-            <button className="yuborish_btn" type='button' onClick={Yuborish_btn}>Yuborish</button>
-        </form>
-          
-          </div>
+            <div className="form_div">
+              <label htmlFor="" className="label_guruh">
+                Darsning boshlanish vaqti
+              </label>
+              <select
+                class="form-select select_guruh"
+                onChange={(val) => setDarsVaqt(val.target.value)}
+              >
+                <option selected value="10:00">
+                  10:00
+                </option>
+                <option value="14:00">14:00</option>
+                <option value="16:00">16:00</option>
+                <option value="18:30">18:30</option>
+              </select>
+            </div>
+
+            <div className="form_div">
+              <label htmlFor="" className="label_guruh">
+                Guruh boshlanish sanasi
+              </label>
+              <input
+                defaultValue={kursBoshSana}
+                type="text"
+                placeholder="Sanani yozing"
+                className="input_guruh"
+                onInput={(val) => setKurSana(val.target.value)}
+              />
+            </div>
+
+            <div className="form_div">
+              <label htmlFor="" className="label_guruh">
+                Guruh tugash sanasi
+              </label>
+              <input
+                defaultValue={kursTugashSana}
+                type="text"
+                placeholder="Sanani yozing"
+                className="input_guruh"
+                onInput={(val) => setTugashSana(val.target.value)}
+              />
+            </div>
+            <button
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+              className="yuborish_btn"
+              type="button"
+              onClick={Yuborish_btn}
+            >
+              Send
+            </button>
+            <button
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+              className="yuborish_btn edit_off"
+              type="button"
+              onClick={Edit_off}
+            >
+              Edit group
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

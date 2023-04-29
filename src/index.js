@@ -13,15 +13,13 @@ import Davomat from "./Components/Davomat/Davomat";
 import Xarajat from "./Components/Moliya/Xarajat/Xarajat";
 import Register from "./Components/Register/Register";
 import About from "./Components/About/About";
-import { Provider } from "react-redux";
 import './i18n'
 import Homee from "./Home";
-import { store } from "./Components/Store/Store";
+// import { store } from "./Components/Store/Store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Suspense>
-      <Provider store={store}>
         <BrowserRouter>
           <Routes>
             <Route index path="/" element={<Register />} />
@@ -37,7 +35,6 @@ root.render(
             </Route>
           </Routes>
         </BrowserRouter>
-      </Provider>
     </Suspense>
   </React.StrictMode>
 );
