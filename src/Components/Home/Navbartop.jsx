@@ -105,7 +105,18 @@ export default function Navbartop() {
             />
           </Space>
         </div>
-          <div>
+          
+        <div className="d-flex">
+        <div className="d-flex me-2 ">
+            <p>
+              {' '}
+              {dateState.toLocaleDateString('en-GB', {
+                 day: 'numeric',
+                 month: 'short',
+                 year: 'numeric',
+              })}
+            </p>
+            <p>Time:</p>
           <p>
              {dateState.toLocaleString('en-US', {
                 hour: 'numeric',
@@ -115,9 +126,8 @@ export default function Navbartop() {
             })}
             </p>
           </div>
-        <div >
-          
-            <Dropdown
+           <div>
+           <Dropdown
               menu={{
                 items,
               }}
@@ -127,6 +137,7 @@ export default function Navbartop() {
               <Button>{t("Tili")}</Button>
             </Dropdown>
           
+           </div>
         </div>
         <div className="d-flex justify-content-center">
           <Space direction="" size={16}>
