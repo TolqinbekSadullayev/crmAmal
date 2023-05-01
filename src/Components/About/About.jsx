@@ -32,7 +32,7 @@ export default function About() {
     </div>
     <div class="card11 col-3 my-3 card2">
       <div class="borderr">
-        <h2 id='h2'>Muhammadazim</h2>
+        <h2 id='h2'>Muhammadkarimov Abduazim</h2>
         <div class="icons">
           <i class="fa fa-youtube" aria-hidden="true"></i>
           <i class="fa fa-instagram" aria-hidden="true"></i>
