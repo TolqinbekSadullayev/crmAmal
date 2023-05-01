@@ -67,6 +67,11 @@
     align-items: center;
     justify-content: space-around;
 }
+.icons a{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
 .fa{
     font-size: 1.2em;
     cursor: pointer;
