@@ -1,0 +1,18 @@
+.xarajat__qiymati{
+    border-radius: 10px;
+    background-color: white;
+    width: 530px;
+    border: 1px solid #617E8C80;
+}
+
+.ishhaqi_input{
+    width: 450px;
+    border: 0;
+    border-radius: 10px;
+}
+
+.purple__ishhaqi{
+    height: 40px;
+    width: 5px;
+    background-color: #7338AC;
+}
