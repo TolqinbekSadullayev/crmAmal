@@ -8,10 +8,10 @@ export default function Register() {
 
   let navigate = useNavigate();
   const run = () => {
-    if (val1 === "salom" && val2 === "12345") {
+    if (val1 === "crmkirish" && val2 === "12345678") {
       navigate("/home");
     } else {
-      alert("kalla ukam");
+      alert("kalla ukam xatoku!");
     }
   };
   return (
