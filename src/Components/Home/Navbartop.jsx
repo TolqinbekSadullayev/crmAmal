@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import logo_img from "../img/logo_img.png";
 import uz from "../img/uz.png";
 import ru from "../img/ru.png";
@@ -11,11 +11,11 @@ import { Select } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar } from "antd";
 import { useTranslation } from "react-i18next";
-import { t } from 'i18next'
-import { Button, Dropdown } from 'antd';
-
+import { t } from "i18next";
+import { Button, Dropdown } from "antd";
 
 export default function Navbartop() {
+  const [state, setState] = useState({});
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState("Uz");
   const changeLanguage = (til) => {
@@ -35,37 +35,54 @@ export default function Navbartop() {
     color: "black",
   };
   const handleChange = (value) => {
-    console.log(value); 
+    console.log(value);
   };
   const { Search } = Input;
   const onSearch = (value) => console.log(value);
 
   const items = [
-    { 
-      key: '1',
+    {
+      key: "1",
       label: (
-        <a target="_blank" rel="noopener noreferrer" onClick={() => changeLanguage("Uz")}>
-          Uz <img src={uz} alt="en" style={{width:'30px', height:"30px"}} />
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => changeLanguage("Uz")}
+        >
+          Uz <img src={uz} alt="en" style={{ width: "30px", height: "30px" }} />
         </a>
       ),
     },
     {
-      key: '2',
+      key: "2",
       label: (
-        <a target="_blank" rel="noopener noreferrer" onClick={() => changeLanguage("Ru")}>
-          Ru <img src={ru} alt="en" style={{width:'30px', height:"30px"}} />
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => changeLanguage("Ru")}
+        >
+          Ru <img src={ru} alt="en" style={{ width: "30px", height: "30px" }} />
         </a>
       ),
     },
     {
-      key: '3',
+      key: "3",
       label: (
-        <a target="_blank" rel="noopener noreferrer" onClick={() => changeLanguage("En")}>
-          En <img src={en} alt="en" style={{width:'30px', height:"30px"}} />
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => changeLanguage("En")}
+        >
+          En <img src={en} alt="en" style={{ width: "30px", height: "30px" }} />
         </a>
       ),
     },
   ];
+
+  const date = new Date();
+    const showTime = date.getHours() 
+        + ':' + date.getMinutes() 
+        + ":" + date.getSeconds();
 
   return (
     <div>
@@ -87,19 +104,21 @@ export default function Navbartop() {
             />
           </Space>
         </div>
-        <div>
+          <div>
+          <p align="center"> {showTime}</p>
+          </div>
+        <div >
           
-        <Dropdown
-      menu={{
-        items,
-      }}
-      placement="bottomRight"
-      arrow
-      
-    >
-      <Button>{t("Tili")}</Button>
-    </Dropdown>
-
+            <Dropdown
+              menu={{
+                items,
+              }}
+              placement="bottomRight"
+              arrow
+            >
+              <Button>{t("Tili")}</Button>
+            </Dropdown>
+          
         </div>
         <div className="d-flex justify-content-center">
           <Space direction="" size={16}>
@@ -107,7 +126,7 @@ export default function Navbartop() {
               <Avatar size="large" icon={<UserOutlined />} />
             </Space>
           </Space>
-          <h5>User Name</h5>
+          <h5 className="mt-2 ms-1">User Name</h5>
         </div>
       </div>
     </div>
