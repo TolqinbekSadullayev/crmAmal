@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import logo_img from "../img/logo_img.png";
 import uz from "../img/uz.png";
 import ru from "../img/ru.png";
@@ -79,11 +79,12 @@ export default function Navbartop() {
     },
   ];
 
-  const date = new Date();
-    const showTime = date.getHours() 
-        + ':' + date.getMinutes() 
-        + ":" + date.getSeconds();
+  
 
+        const [dateState, setDateState] = useState(new Date());
+    useEffect(() => {
+           setInterval(() => setDateState(new Date()), 1000);
+    }, []);
   return (
     <div>
       <div className="top_section d-flex justify-content-around">
@@ -105,7 +106,14 @@ export default function Navbartop() {
           </Space>
         </div>
           <div>
-          <p align="center"> {showTime}</p>
+          <p>
+             {dateState.toLocaleString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true,
+            })}
+            </p>
           </div>
         <div >
           
