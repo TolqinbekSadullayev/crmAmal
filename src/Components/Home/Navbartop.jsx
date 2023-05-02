@@ -26,7 +26,7 @@ defineElement(lottie.loadAnimation);
 export default function Navbartop() {
   const [state, setState] = useState({});
   const { t, i18n } = useTranslation();
-  const [lang, setLang] = useState("Uz");
+  const [lang, setLang] = useState("En");
   const changeLanguage = (til) => {
     if (til === "Ru") {
       setLang("Ru");
