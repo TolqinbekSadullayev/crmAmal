@@ -1,4 +1,6 @@
+
 import React, { useState,useEffect } from "react";
+
 import logo_img from "../img/logo_img.png";
 import uz from "../img/uz.png";
 import ru from "../img/ru.png";
@@ -11,8 +13,10 @@ import { Select } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar } from "antd";
 import { useTranslation } from "react-i18next";
-import { t } from "i18next";
-import { Button, Dropdown } from "antd";
+
+import { t } from 'i18next'
+import { Button, Dropdown } from 'antd';
+
 
 import imgav from '../img/logo_img.png'
 import "./Navbartop.css";
@@ -123,7 +127,31 @@ export default function Navbartop() {
     </div>
 
         <div className="navbartop_right">
-          {/* <div className="line"></div> */}
+          
+        <div className="d-flex clock">
+        <div className="d-flex me-2 " style={{fontSize:'15px'}}>
+            <p>
+              {' '}
+              {dateState.toLocaleDateString('en-GB', {
+                 day: 'numeric',
+                 month: 'short',
+                 year: 'numeric',
+              })}
+            </p>
+            <p>Time:</p>
+          <p>
+             {dateState.toLocaleString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true,
+            })}
+            </p>
+          </div>
+           
+        </div>
+        
+          <div className="line"></div>
           <div>
             <Dropdown
               menu={{items, }}
@@ -159,32 +187,11 @@ export default function Navbartop() {
           </div></Link>
         </div>
 
-        
-        <div className="d-flex clock">
-        <div className="d-flex me-2 ">
-            <p>
-              {' '}
-              {dateState.toLocaleDateString('en-GB', {
-                 day: 'numeric',
-                 month: 'short',
-                 year: 'numeric',
-              })}
-            </p>
-            <p>Time:</p>
-          <p>
-             {dateState.toLocaleString('en-US', {
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric',
-                hour12: true,
-            })}
-            </p>
-          </div>
-           
-        </div>
+
         
 
         </div>
+
 
       </div>
     

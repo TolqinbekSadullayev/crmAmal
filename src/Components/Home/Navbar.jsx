@@ -106,7 +106,7 @@ export default function Navbar() {
   }
   
   return (
-    <div>
+    <div className="Navv">
       
         <div className="Navbarleft ">
           <div>

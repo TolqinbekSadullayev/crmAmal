@@ -23,9 +23,9 @@ export default function Guruxlar() {
   const [boshlanishDarsVaqti, setDarsVaqt] = useState("10:00");
   const [kursBoshSana, setKurSana] = useState("");
   const [kursTugashSana, setTugashSana] = useState("");
+  const [rost , setRost] = useState(false)
 
   useEffect(() => {
-    Edit_off()
     axios
       .get("https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group")
       .then((ress) => {
@@ -38,8 +38,9 @@ export default function Guruxlar() {
       .catch((err) => {
         console.log(err);
       });
+    
      
-  }, []);
+  }, [rost]);
 
 
  function Yuborish_btn() {
@@ -63,13 +64,15 @@ export default function Guruxlar() {
         let post_data = [...groupData]
         post_data.push(ress.data)
         setGroupData(post_data)
-
-        setKursNomi('')
+        
         setKurSana('')
         setTugashSana('')
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setKursNomi('')
       });
   }
 
@@ -81,7 +84,7 @@ export default function Guruxlar() {
     let  filter_data = groupData.filter((item, index) => {
         return (item.id != id)
        })
-       setGroupData(filter_data)
+       setGroupData(filter_data) 
     })
     .catch(err => {
       console.log(err);
@@ -109,11 +112,12 @@ export default function Guruxlar() {
 
       .then(ress => {
         console.log(ress.data)
-        setKursNomi('')
+        
       })
       .catch(err => {
         console.log(err);
       })
+      window.location.reload(true)
     }
 
     function Edit(id,index) {
@@ -279,7 +283,7 @@ export default function Guruxlar() {
               );
             })
           ) : (
-            <></>
+            <>lodaing...</>
           )}
         </tbody>
       </table>
@@ -325,7 +329,7 @@ export default function Guruxlar() {
                 Kurs tanlash
               </label>
               <select
-              value={"front-end"}
+              defaultValue={"front-end"}
                 class="form-select select_guruh"
                 onChange={(val) => setKurs(val.target.value)}
               >

@@ -40,4 +40,20 @@
 .bgg{
   background-color: rgb(240, 232, 232);
   padding: 0;
+  overflow-x: scroll;
+  max-height: 100vh;
+}
+
+.section::-webkit-scrollbar {
+  width: 16px;
+}
+
+.section::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+.section::-webkit-scrollbar-thumb {
+  background-color: #d4aa70;
+  border-radius: 100px;
 }
