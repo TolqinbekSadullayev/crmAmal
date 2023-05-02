@@ -96,8 +96,8 @@ export default function Navbartop() {
 </lord-icon>
         </div>
 
-    <div className="nav_search">
-   <span className="search_icon">
+    <div className="nav_search1">
+   <span className="search_icon1">
    <lord-icon
             src="https://cdn.lordicon.com/msoeawqm.json"
             trigger="hover"
@@ -105,7 +105,7 @@ export default function Navbartop() {
             style={{ width: "26px", height: "26px" }}
           ></lord-icon>
    </span>
-          <input type="text" placeholder={t("Nt_search")} className="nav_input" />
+          <input type="text" placeholder={t("Nt_search")} className="nav_input1" />
     </div>
 
     <div className="d-flex clock mt-2">
