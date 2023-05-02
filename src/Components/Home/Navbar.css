@@ -67,3 +67,6 @@
   background-color: rgb(240, 232, 232);
  width: 300px;
 }
+.ava:hover{
+ cursor: pointer;
+}

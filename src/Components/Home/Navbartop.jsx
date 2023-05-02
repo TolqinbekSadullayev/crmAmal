@@ -13,6 +13,7 @@ import { Avatar } from "antd";
 import { useTranslation } from "react-i18next";
 import { t } from "i18next";
 import { Button, Dropdown } from "antd";
+import imgav from '../img/logo_img.png'
 
 export default function Navbartop() {
   const [state, setState] = useState({});
@@ -139,14 +140,14 @@ export default function Navbartop() {
           
            </div>
         </div>
-        <div className="d-flex justify-content-center">
+        <Link to={'/account'} style={linkStyle}><div className="d-flex justify-content-center ava">
           <Space direction="" size={16}>
             <Space wrap size={16}>
-              <Avatar size="large" icon={<UserOutlined />} />
+              <Avatar src={imgav} size="large" icon={<UserOutlined />} />
             </Space>
           </Space>
-          <h5 className="mt-2 ms-1">User Name</h5>
-        </div>
+          <h5 className="mt-2 ms-1">Crm admin</h5>
+        </div></Link>
       </div>
     </div>
   );
