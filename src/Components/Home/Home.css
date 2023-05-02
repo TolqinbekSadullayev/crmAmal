@@ -3,12 +3,16 @@
     border-radius: 2px black solid;
     background-color: #DBCFE6;
     padding: 5px 10px;
+    text-align: center;
+    
 }
 .divlar2{
     border-radius: 20px;
     border-radius: 2px black solid;
     background-color: #CBE3F3;
     padding: 5px 10px;
+    text-align: center;
+    
 
 }
 .divlar3{
@@ -16,6 +20,8 @@
     border-radius: black 2px solid;
     background-color: #F3C9D8;
     padding: 5px 10px;
+    text-align: center;
+    
 
 }
 .divlar4{
@@ -23,6 +29,8 @@
     border-radius: 2px black solid;
     background-color: #F2D0CD;
     padding: 5px 10px;
+    text-align: center;
+    
 
 }
 .divlar5{
@@ -30,6 +38,8 @@
     border-radius: 2px black solid;
     background-color: #C3DCDA;
     padding: 5px 10px;
+    text-align: center;
+    
 
 }
 .divlar6{
@@ -37,5 +47,7 @@
     border-radius: 2px black solid;
     background-color: #F1DEC6;
     padding: 5px 10px;
+    text-align: center;
+    
 
 }

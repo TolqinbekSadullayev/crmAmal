@@ -27,11 +27,11 @@
   text-decoration: none;
 }
 
-.Navbarleft li a:hover {
+/* .Navbarleft li a:hover {
   background-color: #635AD9;
   color: black;
   border-radius: 0 0 10px 10px;
-}
+} */
 .chiq{
   padding: 14px 16px;
 }
@@ -66,4 +66,10 @@
   border-radius: 20px;
   background-color: rgb(240, 232, 232);
  width: 300px;
+}
+
+.li_click{
+  background-color: #635AD9;
+  color: black;
+  border-radius: 0 0 10px 10px;
 }

@@ -14,9 +14,13 @@
     justify-content: start;
     gap: 15px;
     padding: 10px;
+    padding: 35px 10px 10px 10px;
+}
+.bittaXona h1{
     font-family: 'Inter';
     font-weight: 600;
-    font-size: 40px;
+    font-size: 38px;
+    color: #253238;
 }
 
 .web_sanahifa {
@@ -26,6 +30,7 @@
     align-items: start;
     justify-content: center;
     padding: 10px;
+    width: 272px;
 }
 
 .engliw_beginner {
@@ -41,7 +46,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 10px 0;
+    padding: 5px 0 !important;
 }
 
 .nomi {
@@ -64,10 +69,256 @@
     font-size: 16px;
 }
 
-.hr{
+.hr {
     background-color: #253238c6;
     padding: 0;
+    margin: 15px auto;
+    width: 100%;
+    height: 1px;
+}
+
+.web_sanahifa_bootom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.web_sanahifa_bootom ul {
+    padding: 0 5px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.web_sanahifa_bootom ul li {
+    list-style: none;
+    margin: 4px 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #455B66;
+}
+
+.btn_more {
+    background-color: #7338AC;
+    text-align: center;
+    font-size: 10px !important;
+    padding: 8px;
+    width: 32.4px;
+    height: 18.55px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.dot {
+    font-size: 18px !important;
+    color: #fff;
+    position: absolute;
+    top: -6px;
+    left: 6px;
+}
+
+.bold_name {
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    color: #253238 !important;
+    margin-top: -10px;
+}
+
+ul.btn_ul {
+    gap: 3px;
+    align-items: center;
+}
+
+.davomat_title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 270px;
+    margin: 0 31px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.active_davomat {
+    color: #7338AC;
+    border-bottom: 3px solid #7338AC;
+    padding-bottom: 10px;
+}
+
+.in_active {
+    border-bottom: 3px solid #F5F5F5;
+    padding-bottom: 10px !important;
+    transition: all ease .1s;
+}
+
+.in_active:hover {
+    padding-bottom: 10px;
+    cursor: pointer;
+    color: #7338AC;
+    border-bottom: 3px solid #7338AC;
+}
+
+.jadval_ismlar {
+    margin-top: -5px;
+}
+
+.jadval_ismlar li {
+    list-style: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #253238;
+    padding: 13px 5px;
+}
+
+.jadval_davomati {
+    list-style: none;
+    padding: 0 0 0 10px;
+}
+
+.jadval_davomati li {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.jadval_sana {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.jadval_sana p {
+    padding: 10px 5px;
     margin: 0;
-    width: 80%;
-    height: 3px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #253238;
+
+}
+
+.chekkid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    width: 32px;
+    height: 32px;
+    background: rgba(97, 126, 140, 0.3);
+    border-radius: 50px;
+    margin: 8px 13px;
+    cursor: pointer;
+    position: relative;
+    transition: all ease-in-out .3s;
+}
+
+.chekkid:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.bor::after {
+    position: absolute;
+    content: 'Y';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(0deg, #ED4337, #ED4337), #7338AC;
+    border-radius: 50px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.yuq::after {
+    position: absolute;
+    content: 'S';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    width: 32px;
+    height: 32px;
+    background: #7338AC;
+    border-radius: 50px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.modal_ {
+    border: 1px solid #ccc;
+    display: flex;
+    position: absolute;
+    padding: 7px;
+    gap: 6px;
+    border-radius: 25px;
+    background-color: #fff;
+    left: 27px;
+    z-index: 10000;
+}
+
+.bor_m {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(0deg, #ED4337, #ED4337), #7338AC;
+    border-radius: 50px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    transition: all ease-in-out .2s;
+}
+
+.bor_m:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.yuq_m:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.yuq_m {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    width: 32px;
+    height: 32px;
+    background: #7338AC;
+    border-radius: 50px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    transition: all ease-in-out .2s;
+}
+
+.web_design {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 24px;
+    color: #253238;
 }
