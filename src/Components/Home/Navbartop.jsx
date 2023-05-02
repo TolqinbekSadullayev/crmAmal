@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState, useEffect} from "react";
 import logo_img from "../img/logo_img.png";
 import uz from "../img/uz.png";
 import ru from "../img/ru.png";
@@ -11,16 +11,12 @@ import { Select } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar } from "antd";
 import { useTranslation } from "react-i18next";
-import { t } from "i18next";
-import { Button, Dropdown } from "antd";
-import "./Navbartop.css";
+import { t } from 'i18next'
+import { Button, Dropdown } from 'antd';
 
-import lottie from "lottie-web";
-import { defineElement } from "lord-icon-element";
-
-defineElement(lottie.loadAnimation);
 
 export default function Navbartop() {
+  const [state, setState] = useState({});
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState("Uz");
   const changeLanguage = (til) => {
@@ -84,6 +80,12 @@ export default function Navbartop() {
     },
   ];
 
+  
+
+        const [dateState, setDateState] = useState(new Date());
+    useEffect(() => {
+           setInterval(() => setDateState(new Date()), 1000);
+    }, []);
   return (
     <div className="NavbarTop">
       <div className="top_section ">
@@ -159,7 +161,29 @@ export default function Navbartop() {
               onSearch={onSearch}
             />
           </Space>
-        </div> */}
+  </div>*/}
+        <div>
+          
+        <Dropdown
+      menu={{
+        items,
+      }}
+      placement="bottomRight"
+      arrow
+      
+    >
+      <Button>{t("Tili")}</Button>
+    </Dropdown>
+
+        </div>
+        <div className="d-flex justify-content-center">
+          <Space direction="" size={16}>
+            <Space wrap size={16}>
+              <Avatar size="large" icon={<UserOutlined />} />
+            </Space>
+          </Space>
+          <h5>User Name</h5>
+        </div>
       </div>
     </div>
   );

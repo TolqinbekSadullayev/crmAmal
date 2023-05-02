@@ -1,39 +1,69 @@
-import React , {useState} from 'react'
-import {useNavigate } from "react-router-dom";
-import './Register.css'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Register.css";
 
 export default function Register() {
-  const [val1 , setval1] = useState()
-  const [val2 , setval2] = useState()
+  const [val1, setval1] = useState();
+  const [val2, setval2] = useState();
 
-  let navigate = useNavigate()
-  const run = ()=>{
-    if(val1 === 'salom' && val2 === "12345"){
-        navigate('/home')
+  let navigate = useNavigate();
+  const run = () => {
+    if (val1 === "crmkirish" && val2 === "12345678") {
+      navigate("/home");
+    } else {
+      alert("kalla ukam xatoku!");
     }
-    else{
-      alert('kalla ukam')
-    }
-  }
+  };
   return (
-    <div className='align'>
-       <div class="grid">
-    <form  method="POST" class="form login">
-      <div class="form_field">
-        <label><i class="fa fa-user" style={{color: '#606468'}}></i></label>
-        <input onInput={(val)=>{setval1(val.target.value)}} type="text" name="username" class="form_input" placeholder="Username" required/>
+    <div className="Body1">
+      <div className="container2">
+      <div class="screen">
+        <div class="screen-content">
+          <form class="login">
+            <div class="login-field">
+              <i class="login-icon fas fa-user"></i>
+              <input
+                onInput={(val) => {
+                  setval1(val.target.value);
+                }}
+                type="text"
+                class="login-input"
+                placeholder="User name / Email"
+              />
+            </div>
+            <div class="login-field">
+              <i class="login-icon fas fa-lock"></i>
+              <input
+                onInput={(val) => {
+                  setval2(val.target.value);
+                }}
+                type="password"
+                class="login-input"
+                placeholder="Password"
+              />
+            </div>
+            <button onClick={run} class="button login-submit">
+              <span class="button__text">Log In Now</span>
+              <i class="button-icon fas fa-chevron-right"></i>
+            </button>
+          </form>
+          <div class="social-login">
+            <h3>log in CRM</h3>
+            <div class="social-icons">
+              <a href="#" class="social-login-icon fab fa-instagram"></a>
+              <a href="#" class="social-login-icon fab fa-facebook"></a>
+              <a href="#" class="social-login-icon fab fa-twitter"></a>
+            </div>
+          </div>
+        </div>
+        <div class="screen-background">
+          <span class="screen-background-shape screen-background-shape4"></span>
+          <span class="screen-background-shape screen-background-shape3"></span>
+          <span class="screen-background-shape screen-background-shape2"></span>
+          <span class="screen-background-shape screen-background-shape1"></span>
+        </div>
       </div>
-      <div class="form_field">
-        <label><i class="fa fa-lock" style={{color: '#606468'}}></i></label>
-        <input onInput={(val)=>{setval2(val.target.value)}} type="password" name="password" class="form_input" placeholder="Password" required/>
       </div>
-      <div class="form_field">
-        <button class="submitButton" onClick={run} type="submit">Submit</button>
-      </div>
-    </form>
-    <p class="text--center">Not a member? <a href="https://t.me/@tolqin_sadullayev/">Register</a></p>
-  </div>
     </div>
-  )
+  );
 }
-

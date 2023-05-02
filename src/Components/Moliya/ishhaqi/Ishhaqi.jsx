@@ -1,9 +1,5 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import "./Ishhaqi.css";
 
 function Ishhaqi() {
   const [age, setAge] = React.useState("");
@@ -14,23 +10,64 @@ function Ishhaqi() {
 
   return (
     <div className="col-12">
-      <h1>Ish haqi</h1>
-      <Box sx={{ minWidth: 120 }}>
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Age</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={age}
-            label="Age"
-            onChange={handleChange}
-          >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-        </FormControl>
-      </Box>
+      <h4 className="mt-3">Ish haqi</h4>
+
+      <div className="d-flex align-items-center col-12 bg-light my-3">
+        <div className="purple__ishhaqi"></div>
+
+        <p>
+          Barcha o'qituvchilar uchun standart xarajatlarni belgilash
+          parametrlarini ko'rsating
+        </p>
+      </div>
+      <div className="ms-2">
+        <p>Xarajat qiymati</p>
+        <div className="d-flex flex-row">
+          <div className="d-flex flex-row xarajat__qiymati">
+            <input type="text" className="ishhaqi_input" />
+            <button className="btn btn-secondary">Primary</button>
+          </div>
+          <div className="btn btn-primary mx-5">Saqlash</div>
+        </div>
+      </div>
+      <div className="d-flex align-items-center col-12 bg-light my-3">
+        <div className="purple__ishhaqi"></div>
+        <div>
+          <p>
+            Barcha o'qituvchilar uchun standart xarajatlarni belgilash
+            parametrlarini ko'rsating
+          </p>
+        </div>
+      </div>
+      <div className="ms-2">
+        <p>Xarajat qiymati</p>
+        <div className="d-flex flex-row">
+          <div className="d-flex flex-row xarajat__qiymati">
+            <input type="text" className="ishhaqi_input" />
+            <button className="btn btn-secondary">Primary</button>
+          </div>
+          <div className="btn btn-primary mx-5">Saqlash</div>
+        </div>
+      </div>
+      <div className="d-flex align-items-center col-12 bg-light my-3">
+        <div className="purple__ishhaqi"></div>
+        <div>
+          <p>
+            Barcha o'qituvchilar uchun standart xarajatlarni belgilash
+            parametrlarini ko'rsating
+          </p>
+        </div>
+      </div>
+      <div  className="ms-2">
+        <p>Xarajat qiymati</p>
+        <div className="d-flex flex-row">
+          <div className="d-flex flex-row xarajat__qiymati">
+            <input type="text" className="ishhaqi_input" />
+            <button className="btn btn-secondary">Primary</button>
+          </div>
+          <div className="btn btn-primary mx-5">Saqlash</div>
+        </div>
+      </div>
     </div>
   );
 }
