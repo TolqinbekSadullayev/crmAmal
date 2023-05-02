@@ -1,24 +1,12 @@
-
 import React, { useState,useEffect } from "react";
-
 import logo_img from "../img/logo_img.png";
 import uz from "../img/uz.png";
 import ru from "../img/ru.png";
 import en from "../img/en.png";
-import { AiOutlineSearch } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { AudioOutlined } from "@ant-design/icons";
-import { Input, Space } from "antd";
-import { Select } from "antd";
-import { UserOutlined } from "@ant-design/icons";
-import { Avatar } from "antd";
 import { useTranslation } from "react-i18next";
-
-import { t } from 'i18next'
-import { Button, Dropdown } from 'antd';
-
-
-import imgav from '../img/logo_img.png'
+import { t } from "i18next";
+import { Button, Dropdown } from "antd";
 import "./Navbartop.css";
 
 import lottie from "lottie-web";
@@ -28,7 +16,6 @@ defineElement(lottie.loadAnimation);
 
 
 export default function Navbartop() {
-  const [state, setState] = useState({});
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState("En");
   const changeLanguage = (til) => {
@@ -47,12 +34,7 @@ export default function Navbartop() {
     textDecoration: "none",
     color: "black",
   };
-  const handleChange = (value) => {
-    console.log(value);
-  };
-  const { Search } = Input;
-  const onSearch = (value) => console.log(value);
-
+  
   const items = [
     {
       key: "1",
@@ -126,10 +108,8 @@ export default function Navbartop() {
           <input type="text" placeholder={t("Nt_search")} className="nav_input" />
     </div>
 
-        <div className="navbartop_right">
-          
-        <div className="d-flex clock">
-        <div className="d-flex me-2 " style={{fontSize:'15px'}}>
+    <div className="d-flex clock mt-2">
+        <div className="d-flex ms-5">
             <p>
               {' '}
               {dateState.toLocaleDateString('en-GB', {
@@ -150,8 +130,8 @@ export default function Navbartop() {
           </div>
            
         </div>
-        
-          <div className="line"></div>
+        <div className="navbartop_right">
+          {/* <div className="line"></div> */}
           <div>
             <Dropdown
               menu={{items, }}
@@ -187,11 +167,11 @@ export default function Navbartop() {
           </div></Link>
         </div>
 
-
+        
+        
         
 
         </div>
-
 
       </div>
     
