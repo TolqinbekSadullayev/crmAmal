@@ -25,6 +25,7 @@ export default function Guruxlar() {
   const [kursTugashSana, setTugashSana] = useState("");
 
   useEffect(() => {
+    Edit_off()
     axios
       .get("https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group")
       .then((ress) => {
@@ -37,7 +38,7 @@ export default function Guruxlar() {
       .catch((err) => {
         console.log(err);
       });
-      Edit_off()
+     
   }, []);
 
 
@@ -101,7 +102,6 @@ export default function Guruxlar() {
         kurs: kurs,
         bosh_sana: kursBoshSana,
         tugash_sana: kursTugashSana,
-        status: true,
         count: true,
         xona: xona,
         icon: false
@@ -109,6 +109,7 @@ export default function Guruxlar() {
 
       .then(ress => {
         console.log(ress.data)
+        setKursNomi('')
       })
       .catch(err => {
         console.log(err);
@@ -189,7 +190,7 @@ export default function Guruxlar() {
                 <tr
                   value={item}
                   className={activ ? "" : "d-none"}
-                  style={{ position: "relative" }}
+                  style={{ position: "relative", alignItems: 'center' }}
                 >
                   <td className="item">{item.id}</td>
                   <td className="item width_name">

@@ -93,6 +93,7 @@
 /* delet and edit */
 .icon{
     font-size: 20px;
+    margin: 0 !important;
 }
 
 .list{
