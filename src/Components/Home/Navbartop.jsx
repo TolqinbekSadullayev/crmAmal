@@ -1,4 +1,6 @@
-import React, {useState, useEffect} from "react";
+
+import React, { useState,useEffect } from "react";
+
 import logo_img from "../img/logo_img.png";
 import uz from "../img/uz.png";
 import ru from "../img/ru.png";
@@ -11,8 +13,18 @@ import { Select } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar } from "antd";
 import { useTranslation } from "react-i18next";
+
 import { t } from 'i18next'
 import { Button, Dropdown } from 'antd';
+
+
+import imgav from '../img/logo_img.png'
+import "./Navbartop.css";
+
+import lottie from "lottie-web";
+import { defineElement } from "lord-icon-element";
+
+defineElement(lottie.loadAnimation);
 
 
 export default function Navbartop() {
@@ -115,7 +127,31 @@ export default function Navbartop() {
     </div>
 
         <div className="navbartop_right">
-          {/* <div className="line"></div> */}
+          
+        <div className="d-flex clock">
+        <div className="d-flex me-2 " style={{fontSize:'15px'}}>
+            <p>
+              {' '}
+              {dateState.toLocaleDateString('en-GB', {
+                 day: 'numeric',
+                 month: 'short',
+                 year: 'numeric',
+              })}
+            </p>
+            <p>Time:</p>
+          <p>
+             {dateState.toLocaleString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true,
+            })}
+            </p>
+          </div>
+           
+        </div>
+        
+          <div className="line"></div>
           <div>
             <Dropdown
               menu={{items, }}
@@ -140,7 +176,7 @@ export default function Navbartop() {
 
           <div className="line"></div>
 
-          <div className="d-flex justify-content-center align-items-center">
+          <Link to={'/account'} style={linkStyle}><div className="d-flex justify-content-center align-items-center">
             <lord-icon
               src="https://cdn.lordicon.com/dxjqoygy.json"
               trigger="hover"
@@ -148,43 +184,16 @@ export default function Navbartop() {
               style={{ width: "50px", height: "50px" }}
             ></lord-icon>
             <h5 className="userName">User Name</h5>
-          </div>
+          </div></Link>
         </div>
 
-        {/* <div className="">
-          <Space direction="vertical">
-            <Search
-              placeholder={t("Nt_search")}
-              allowClear
-              enterButton={t("Nt_search")}
-              size="large"
-              onSearch={onSearch}
-            />
-          </Space>
-  </div>*/}
-        <div>
-          
-        <Dropdown
-      menu={{
-        items,
-      }}
-      placement="bottomRight"
-      arrow
-      
-    >
-      <Button>{t("Tili")}</Button>
-    </Dropdown>
+
+        
 
         </div>
-        <div className="d-flex justify-content-center">
-          <Space direction="" size={16}>
-            <Space wrap size={16}>
-              <Avatar size="large" icon={<UserOutlined />} />
-            </Space>
-          </Space>
-          <h5>User Name</h5>
-        </div>
+
+
       </div>
-    </div>
+    
   );
 }

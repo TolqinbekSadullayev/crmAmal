@@ -111,7 +111,7 @@ export default function Navbar() {
         <div className="Navbarleft ">
           <div>
             <ul>
-              <li className={(click_home) ? '' : 'li_click'} onClick={click_Home} >
+              <li className={(click_home) ? '' : "li_click"} onClick={click_Home} >
                 <Link to={"/home"}><FcHome/> {t("N_bosh")}</Link>
               </li>
               <li>
