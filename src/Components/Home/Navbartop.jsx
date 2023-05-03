@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from "react";
+
+import React, { useState,useEffect } from "react";
+
 import logo_img from "../img/logo_img.png";
 import uz from "../img/uz.png";
 import ru from "../img/ru.png";
 import en from "../img/en.png";
 import { Link } from "react-router-dom";
-import { Input } from "antd";
+import { AudioOutlined } from "@ant-design/icons";
+import { Input, Space } from "antd";
+import { Select } from "antd";
+import { UserOutlined } from "@ant-design/icons";
+import { Avatar } from "antd";
 import { useTranslation } from "react-i18next";
 import { t } from "i18next";
 import { Button, Dropdown } from "antd";
@@ -14,9 +20,8 @@ import { defineElement } from "lord-icon-element";
 defineElement(lottie.loadAnimation);
 
 export default function Navbartop() {
-  const [state, setState] = useState({});
   const { t, i18n } = useTranslation();
-  const [lang, setLang] = useState("Uz");
+  const [lang, setLang] = useState("En");
   const changeLanguage = (til) => {
     if (til === "Ru") {
       setLang("Ru");
@@ -33,12 +38,7 @@ export default function Navbartop() {
     textDecoration: "none",
     color: "black",
   };
-  const handleChange = (value) => {
-    console.log(value);
-  };
-  const { Search } = Input;
-  const onSearch = (value) => console.log(value);
-
+  
   const items = [
     {
       key: "1",
@@ -98,45 +98,43 @@ export default function Navbartop() {
           ></lord-icon>
         </div>
 
-        <div className="nav_search">
-          <span className="search_icon">
-            <lord-icon
-              src="https://cdn.lordicon.com/msoeawqm.json"
-              trigger="hover"
-              colors="primary:#ffffff,secondary:#ffffff"
-              style={{ width: "26px", height: "26px" }}
-            ></lord-icon>
-          </span>
-          <input
-            type="text"
-            placeholder={t("Nt_search")}
-            className="nav_input"
-          />
-        </div>
+    <div className="nav_search">
+   <span className="search_icon">
+   <lord-icon
+            src="https://cdn.lordicon.com/msoeawqm.json"
+            trigger="hover"
+            colors="primary:#ffffff,secondary:#ffffff"
+            style={{ width: "26px", height: "26px" }}
+          ></lord-icon>
+   </span>
+          <input type="text" placeholder={t("Nt_search")} className="nav_input" />
+    </div>
 
         <div className="navbartop_right">
-          <div className="d-flex clock">
-            <div className="d-flex me-2 " style={{ fontSize: "15px" }}>
-              <p>
-                {" "}
-                {dateState.toLocaleDateString("en-GB", {
-                  day: "numeric",
-                  month: "short",
-                  year: "numeric",
-                })}
-              </p>
-              <p>Time:</p>
-              <p>
-                {dateState.toLocaleString("en-US", {
-                  hour: "numeric",
-                  minute: "numeric",
-                  second: "numeric",
-                  hour12: true,
-                })}
-              </p>
-            </div>
+          
+        <div className="d-flex clock">
+        <div className="d-flex me-2 " style={{fontSize:'15px'}}>
+            <p>
+              {' '}
+              {dateState.toLocaleDateString('en-GB', {
+                 day: 'numeric',
+                 month: 'short',
+                 year: 'numeric',
+              })}
+            </p>
+            <p>Time:</p>
+          <p>
+             {dateState.toLocaleString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true,
+            })}
+            </p>
           </div>
-
+           
+        </div>
+        
           <div className="line"></div>
           <div>
             <Dropdown
@@ -162,18 +160,23 @@ export default function Navbartop() {
 
           <div className="line"></div>
 
-          <Link to={"/account"} style={linkStyle}>
-            <div className="d-flex justify-content-center align-items-center">
-              <lord-icon
-                src="https://cdn.lordicon.com/dxjqoygy.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#ffffff"
-                style={{ width: "50px", height: "50px" }}
-              ></lord-icon>
-              <h5 className="userName">User Name</h5>
-            </div>
-          </Link>
+          <Link to={'/account'} style={linkStyle}><div className="d-flex justify-content-center align-items-center">
+            <lord-icon
+              src="https://cdn.lordicon.com/dxjqoygy.json"
+              trigger="hover"
+              colors="primary:#ffffff,secondary:#ffffff"
+              style={{ width: "50px", height: "50px" }}
+            ></lord-icon>
+            <h5 className="userName">User Name</h5>
+          </div></Link>
         </div>
+
+
+        
+
+        </div>
+
+
       </div>
     </div>
   );

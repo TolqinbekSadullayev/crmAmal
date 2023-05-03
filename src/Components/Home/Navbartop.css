@@ -47,33 +47,39 @@
     margin-top: 5px;
 }
 
-.nav_input{
+.nav_input1{
     background-color: #ffffff30;
     padding: 7px 40px;
     border-radius: 20px;
     width: 350px;
+    outline: none;
+    border: none;
+}
+.nav_input1:focus{
+    border: none;
+    outline: none;
 }
 
-.nav_input::placeholder{
+.nav_input1::placeholder{
     color: #ffffffc3;
     font-size: 17px;
     font-family: 'Inter';
 }
 
-.nav_input:valid{
+.nav_input1:valid{
     color: #ffffffc3;
     font-size: 17px;
     font-family: 'Inter';
 }
 
-.nav_search{
+.nav_search1{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
-.search_icon{
+.search_icon1{
     display: inline-block;
     position: absolute;
     left: 7px;
