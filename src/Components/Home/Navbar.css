@@ -9,26 +9,40 @@
 }
 .Navv{
   background-color: #fff !important;
+}
 
+.Navbarleft div{
+  width: 100%;
+  margin: 0 auto;
 }
 
 .Navbarleft ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
-.Navbarleft li {
-  flex: 1;
-  text-align: center;
+
+.Navbarleft ul>a>li {
+  width: 100% !important; 
 }
 
-.Navbarleft li a {
-  display: block;
+.Navbarleft  a li {
+  display: inline-block;
   color: black;
   text-align: center;
-  padding: 10px 12px;
+  padding: 25px 0px;
   text-decoration: none;
+  list-style: none;
+}
+.Navbarleft ul a{
+  display: block;
+  width: 100%;
+  padding: 0px 0px;
+ font-size: 20px;
 }
 
 .chiq{

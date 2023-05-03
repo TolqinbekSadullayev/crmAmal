@@ -4,8 +4,8 @@
     height: 379px;
     width: 300px;
     background: grey;
-    margin: 0 50px;
     border-radius: 10px;
+    margin: 0 15px;
     transition:  0.8s;
     overflow: hidden;
     background: black;
@@ -31,24 +31,32 @@
     background-size: 315px;
 }
 .card0:hover {
-    background: url('/src/Components/img/photo_2023-05-01_12-57-22.jpg') left center no-repeat;
-    background-size: 600px;
+    background: url('/src/Components/img/photo_2023-05-01_12-57-22.jpg') center no-repeat;
+    background-size: 350px;
 }
 .card1{
     background: url('/src/Components/img/photo_2023-05-01_12-57-17.jpg') center center no-repeat;
     background-size: 400px
 }
 .card1:hover{
-    background: url('/src/Components/img/photo_2023-05-01_12-57-17.jpg') left center no-repeat;
-    background-size: 600px;
+    background: url('/src/Components/img/photo_2023-05-01_12-57-17.jpg') center no-repeat;
+    background-size: 450px;
+}
+.card3{
+    background: url('/src/Components/img/photo_2023-05-02_18-47-35.jpg') center center no-repeat;
+    background-size: 400px;
+}
+.card3:hover{
+    background: url('/src/Components/img/photo_2023-05-02_18-47-35.jpg') center no-repeat;
+    background-size: 450px;
 }
 .card2{
     background: url('/src/Components/img/photo_2023-05-01_12-56-55.jpg') center center no-repeat;
     background-size: 400px;
 }
 .card2:hover{
-    background: url('/src/Components/img/photo_2023-05-01_12-56-55.jpg') left center no-repeat;
-    background-size: 600px;
+    background: url('/src/Components/img/photo_2023-05-01_12-56-55.jpg') center no-repeat;
+    background-size: 450px;
 }
 #h2{
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -84,7 +92,7 @@
 .container1{
    
     display: flex;
-    justify-content: center;
+    justify-content:end;
     align-items: center;
     /* overflow-y: scroll;
     overflow-x: hidden; */

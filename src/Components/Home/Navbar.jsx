@@ -107,28 +107,27 @@ export default function Navbar() {
   
   return (
     <div className="Navv">
-      
         <div className="Navbarleft ">
           <div>
             <ul>
-              <li className={(click_home) ? '' : "li_click"} onClick={click_Home} >
-                <Link to={"/home"}><FcHome/> {t("N_bosh")}</Link>
-              </li>
-              <li>
-                <Link to={"/guruxlar"}><a className={(click_group) ? '' : 'li_click'} onClick={click_guruh} href="#"><HiUserGroup/>  {t("N_gurux")}</a></Link>
-              </li>
-              <li>
-                <Link to={"/hodimlar"}><a  className={(click_xodim) ? '' : 'li_click'} onClick={click_Xodim} href="#"><FaUserTie/>  {t("N_Xodimlar")}</a></Link>
-              </li>
-              <li>
-                <Link to={'/xonalar'}><a className={(click_xonalar) ? '' : 'li_click'} onClick={click_Xonalar} href="#"><MdMeetingRoom/> {t("N_xonalar")}</a></Link>
-              </li>
-              <li>
-                <Link to={"/talabalar"}><a className={(click_talabalar) ? '' : 'li_click'} onClick={click_Talabalar} href="#"><FaUserGraduate/> {t("N_Talabalar")}</a></Link>
-              </li>
-              <li>
-                <Link to={"/xarajat"}><a className={(click_moliya) ? '' : 'li_click'} onClick={click_Moliya} href="#"><FaMonero/>  {t("N_Moliya")}</a></Link>
-              </li>
+            <Link to={"/home"}><li className={(click_home) ? '' : "li_click"} onClick={click_Home} >
+                <FcHome/> {t("N_bosh")}
+              </li></Link>
+              <Link to={"/guruxlar"}> <li className={(click_group) ? '' : 'li_click'} onClick={click_guruh}>
+                 <HiUserGroup/>  {t("N_gurux")}
+              </li></Link>
+              <Link to={"/hodimlar"}> <li className={(click_xodim) ? '' : 'li_click'} onClick={click_Xodim}>
+                  <FaUserTie/>  {t("N_Xodimlar")}
+              </li></Link>
+              <Link to={'/xonalar'}> <li className={(click_xonalar) ? '' : 'li_click'} onClick={click_Xonalar}>
+                 <MdMeetingRoom/> {t("N_xonalar")}
+              </li></Link>
+              <Link to={"/talabalar"}> <li className={(click_talabalar) ? '' : 'li_click'} onClick={click_Talabalar}>
+                 <FaUserGraduate/> {t("N_Talabalar")}
+              </li></Link>
+              <Link to={"/xarajat"}><li className={(click_moliya) ? '' : 'li_click'} onClick={click_Moliya}>
+                 <FaMonero/>  {t("N_Moliya")}
+              </li></Link>
             </ul>
           </div>
           <div className="chiq">

@@ -108,26 +108,23 @@ export default function Navbartop() {
           <input type="text" placeholder={t("Nt_search")} className="nav_input1" />
     </div>
 
-    <div className="d-flex clock mt-2">
-        <div className="d-flex ms-5">
-            <p>
-              {' '}
+    <div className="d-flex justify-content-between ms-5 clock mt-2">
+          <h6>
               {dateState.toLocaleDateString('en-GB', {
                  day: 'numeric',
                  month: 'short',
                  year: 'numeric',
               })}
-            </p>
-            <p>Time:</p>
-          <p>
+            </h6>
+          <h6 className="ms-3">
              {dateState.toLocaleString('en-US', {
                 hour: 'numeric',
                 minute: 'numeric',
                 second: 'numeric',
-                hour12: true,
+                hour24: true,
             })}
-            </p>
-          </div>
+            </h6>
+          
            
         </div>
         <div className="navbartop_right">
