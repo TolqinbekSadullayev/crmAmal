@@ -9,18 +9,36 @@
 }
 .Navv{
   background-color: #fff !important;
-
+  position: relative;
 }
 
-.Navbarleft ul {
-  list-style-type: none;
-  margin: 0;
+.navbar_left_ul{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin-top: 30px;
   padding: 0;
 }
-
-.Navbarleft li {
+.navbar_left_ul li {
   flex: 1;
+  padding: 3px 0;
+  margin: 0 !important;
   text-align: center;
+  list-style: none;
+  width: 100% !important;
+  transition: all ease-in-out .4s;
+}
+
+.navbar_left_ul li:hover{
+  background-color: #775DD0;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.navbar_left_ul li:hover a{
+  color: #fff !important;
+
 }
 
 .Navbarleft li a {
@@ -29,14 +47,19 @@
   text-align: center;
   padding: 10px 12px;
   text-decoration: none;
+  width: 100%;
+  margin: 0;
+  font-weight: 500;
 }
 
 .chiq{
   padding: 14px 16px;
+  position: fixed;
+  top: 90vh;
 }
 .chiq  a{
   text-decoration: none;
- color: black;
+ color: rgb(240, 239, 239);
 }
 .chiq a:hover {
   color: black;
@@ -71,7 +94,9 @@
 }
 
 .li_click{
-  background-color: #635AD9;
-  color: black;
-  border-radius: 0 0 10px 10px;
+  background-color: #775DD0;
+  color: #fff !important;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
+

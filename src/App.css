@@ -38,10 +38,12 @@
   }
 }
 .bgg{
-  background-color: rgb(240, 232, 232);
+  background-color: #F5F5F5;
   padding: 0;
-  overflow-x: scroll;
+  overflow-x: hidden;
   max-height: 100vh;
+  height: 100vh;
+  /* margin-left: 20px; */
 }
 
 .section::-webkit-scrollbar {

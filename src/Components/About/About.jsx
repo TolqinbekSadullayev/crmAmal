@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div>
       <div class="container1">
-    <div className="row">
+    <div className="row g-0 ms-4">
     <div class="card11 col-3 my-3 card0">
       <div class="borderr">
         <h2 id='h2'>To'lqinbek Sadullayev</h2>

@@ -1,5 +1,5 @@
 .top_section{
-    background-color: #7338AC !important;
+    background-color: #775DD0 !important;
     height: 72px;
     display: flex;
     align-items: center;
@@ -38,8 +38,13 @@
     margin-top: 3px;
 }
 
+.crm:hover{
+    color: #fff !important;
+}
+
 .userName{
     color: #fff;
+    margin-top: 5px;
 }
 
 .nav_input{
