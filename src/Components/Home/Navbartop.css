@@ -1,5 +1,5 @@
 .top_section{
-    background-color: #7338AC !important;
+    background-color: #775DD0 !important;
     height: 72px;
     display: flex;
     align-items: center;
@@ -38,8 +38,13 @@
     margin-top: 3px;
 }
 
+.crm:hover{
+    color: #fff !important;
+}
+
 .userName{
     color: #fff;
+    margin-top: 5px;
 }
 
 .nav_input1{
@@ -95,3 +100,25 @@
 .clock{
     color: white;
 }
+  .logo{
+    display: inline-flex;
+  }
+  .logoimg{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  
+  }
+  .input_div{
+    border-radius: 20px;
+    background-color: rgb(240, 232, 232);
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+  }
+  .input_div input{
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(240, 232, 232);
+   width: 300px;
+  }

@@ -8,12 +8,9 @@ import { useTranslation } from "react-i18next";
 import { t } from "i18next";
 import { Button, Dropdown } from "antd";
 import "./Navbartop.css";
-
 import lottie from "lottie-web";
 import { defineElement } from "lord-icon-element";
-
 defineElement(lottie.loadAnimation);
-
 
 export default function Navbartop() {
   const { t, i18n } = useTranslation();
@@ -74,26 +71,24 @@ export default function Navbartop() {
     },
   ];
 
-  
-
-        const [dateState, setDateState] = useState(new Date());
-    useEffect(() => {
-           setInterval(() => setDateState(new Date()), 1000);
-    }, []);
+  const [dateState, setDateState] = useState(new Date());
+  useEffect(() => {
+    setInterval(() => setDateState(new Date()), 1000);
+  }, []);
   return (
     <div className="NavbarTop">
       <div className="top_section ">
         <div className="logo ms-0">
-          <Link to={"/home"} className="home_logo">
-            <img className="logoimg" src={logo_img} alt="logo_img" />
+           <div className="home_logo">
+           <img className="logoimg" src={logo_img} alt="logo_img" />
             <h3 className="crm">CRM</h3>
-          </Link>
+           </div>
           <lord-icon
-    src="https://cdn.lordicon.com/iltqorsz.json"
-    trigger="hover"
-    colors="primary:#ffffff,secondary:#e5d1fa"
-    style={{width:'40px', height:'40px'}}>
-</lord-icon>
+            src="https://cdn.lordicon.com/iltqorsz.json"
+            trigger="hover"
+            colors="primary:#ffffff,secondary:#e5d1fa"
+            style={{ width: "40px", height: "40px" }}
+          ></lord-icon>
         </div>
 
     <div className="nav_search1">
@@ -108,20 +103,23 @@ export default function Navbartop() {
           <input type="text" placeholder={t("Nt_search")} className="nav_input1" />
     </div>
 
-    <div className="d-flex justify-content-between ms-5 clock mt-2">
-          <h6>
+    <div className="d-flex  clock mt-2">
+       
+            <h6>
+              {' '}
               {dateState.toLocaleDateString('en-GB', {
                  day: 'numeric',
                  month: 'short',
                  year: 'numeric',
               })}
             </h6>
-          <h6 className="ms-3">
+            
+          <h6>
              {dateState.toLocaleString('en-US', {
                 hour: 'numeric',
                 minute: 'numeric',
                 second: 'numeric',
-                hour24: true,
+                hour12: true,
             })}
             </h6>
           
@@ -131,7 +129,7 @@ export default function Navbartop() {
           {/* <div className="line"></div> */}
           <div>
             <Dropdown
-              menu={{items, }}
+              menu={{ items }}
               placement="bottomRight"
               arrow
               className="dropp_now"
@@ -153,24 +151,19 @@ export default function Navbartop() {
 
           <div className="line"></div>
 
-          <Link to={'/account'} style={linkStyle}><div className="d-flex justify-content-center align-items-center">
-            <lord-icon
-              src="https://cdn.lordicon.com/dxjqoygy.json"
-              trigger="hover"
-              colors="primary:#ffffff,secondary:#ffffff"
-              style={{ width: "50px", height: "50px" }}
-            ></lord-icon>
-            <h5 className="userName">User Name</h5>
-          </div></Link>
+          <Link to={"/account"} style={linkStyle}>
+            <div className="d-flex justify-content-center align-items-center">
+              <lord-icon
+                src="https://cdn.lordicon.com/dxjqoygy.json"
+                trigger="hover"
+                colors="primary:#ffffff,secondary:#ffffff"
+                style={{ width: "50px", height: "50px" }}
+              ></lord-icon>
+              <h5 className="userName">User Name</h5>
+            </div>
+          </Link>
         </div>
-
-        
-        
-        
-
-        </div>
-
       </div>
-    
+    </div>
   );
 }

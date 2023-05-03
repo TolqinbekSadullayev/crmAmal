@@ -9,25 +9,45 @@
 }
 .Navv{
   background-color: #fff !important;
-}
 
-.Navbarleft div{
-  width: 100%;
-  margin: 0 auto;
 }
-
-.Navbarleft ul {
-  list-style-type: none;
-  margin: 0;
+.navbar_left_ul{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin-top: 30px;
   padding: 0;
   display: flex;
   flex-direction: column;
   align-items: start;
+  padding-left: 0 !important;
 }
 
 
 .Navbarleft ul>a>li {
   width: 100% !important; 
+}
+.navbar_left_ul li {
+  flex: 1;
+  padding: 3px 0;
+  margin: 0 !important;
+  text-align: center;
+  list-style: none;
+  width: 100% !important;
+  transition: all ease-in-out .4s;
+}
+
+.navbar_left_ul li:hover{
+  background-color: #775DD0;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.navbar_left_ul li:hover a{
+  color: #fff !important;
+
+
 }
 
 .Navbarleft  a li {
@@ -36,56 +56,43 @@
   text-align: center;
   padding: 25px 0px;
   text-decoration: none;
+
   list-style: none;
 }
 .Navbarleft ul a{
   display: block;
   width: 100%;
   padding: 0px 0px;
- font-size: 20px;
+ font-size: 20px; 
+  margin: 0;
+  font-weight: 500;
+
+}
+.Navbarleft ul{
+  padding-left: 0 !important;
 }
 
 .chiq{
   padding: 14px 16px;
+  position: fixed;
+  top: 90vh;
 }
 .chiq  a{
   text-decoration: none;
- color: black;
+ color: rgb(240, 239, 239);
 }
 .chiq a:hover {
   color: black;
 }
-.top_section{
-  padding: 14px 16px;
-}
-.logo{
-  display: inline-flex;
-}
-.logoimg{
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
 
-}
-.input_div{
-  border-radius: 20px;
-  background-color: rgb(240, 232, 232);
-  display: inline-flex;
-  text-align: center;
-  justify-content: center;
-}
-.input_div input{
-  border: none;
-  border-radius: 20px;
-  background-color: rgb(240, 232, 232);
- width: 300px;
-}
 .ava:hover{
  cursor: pointer;
 }
 
 .li_click{
-  background-color: #635AD9;
-  color: black;
-  border-radius: 0 0 10px 10px;
+  background-color: #775DD0;
+  color: #fff !important;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
+

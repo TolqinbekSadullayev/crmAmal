@@ -1,9 +1,9 @@
 
-
 .card11{
     height: 379px;
     width: 300px;
     background: grey;
+    margin: 0 10px;
     border-radius: 10px;
     margin: 0 15px;
     transition:  0.8s;

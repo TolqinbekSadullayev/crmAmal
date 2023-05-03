@@ -1,36 +1,65 @@
 import React from "react";
 import "./Home.css";
-
+import Apex from "../Apexcharts/Apex";
+import lottie from "lottie-web";
+import { TiGroup } from "react-icons/ti";
+import { FaUserGraduate } from "react-icons/fa";
+import { ImUserTie, ImUserMinus } from "react-icons/im";
+import Charts from "../SimpleRadarChart/Charts";
 export default function Home() {
   return (
     <div className="">
-      <div className="d-flex justify-content-around mt-3">
-      <div className="divlar1">
-        <h1>56</h1>
-        <h6>Hodimlar</h6>
+      <div className="home_div">
+        <div className="hodimlar">
+          <div
+            className="user_icon"
+            style={{ display: "inline-block", fontSize: "50px" }}
+          >
+            <ImUserTie />
+          </div>
+          <h1 className="list_son">56</h1>
+          <h6 className="list_name">Hodimlar</h6>
+        </div>
+        <div className="talabalar">
+          <div
+            className="user_icon_ta"
+            style={{ display: "inline-block", fontSize: "50px" }}
+          >
+            <FaUserGraduate />
+          </div>
+          <h1 className="list_son_ta">258</h1>
+          <h6 className="list_name_talabalar">Faol talabalar</h6>
+        </div>
+        <div className="guruhlar">
+          <div
+            className="user_icon_gr"
+            style={{ display: "inline-block", fontSize: "50px" }}
+          >
+            <TiGroup />
+          </div>
+          <h1 className="list_son_gr">135</h1>
+          <h6 className="list_name_gr">Guruhlar</h6>
+        </div>
+        <div className="qarzdorlar">
+          <div
+            className="user_icon_qarz"
+            style={{ display: "inline-block", fontSize: "50px" }}
+          >
+            <ImUserMinus />
+          </div>
+          <h1 className="list_son_qarz">56</h1>
+          <h6 className="list_name_qarz">Qarzdorlar</h6>
+        </div>
       </div>
-      <div className="divlar2">
-        <h1>258</h1>
-        <h6>Faol talabalar</h6>
+
+      <div className="apex">
+        <div className="apex_1">
+        <Apex />
+        </div>
+        <div className="apex_1">
+        <Charts />
+        </div>
       </div>
-      <div className="divlar3">
-        <h1>135</h1>
-        <h6>Guruhlar</h6>
-      </div>
-      <div className="divlar4">
-        <h1>56</h1>
-        <h6>Qarzdorlar</h6>
-      </div>
-      <div className="divlar5">
-        <h1>246</h1>
-        <h6>Joriy oyda to'laganlar</h6>
-      </div>
-      <div className="divlar6">
-        <h1>24</h1>
-        <h6>faol guruhni tark etganlar</h6>
-      </div>
-      </div>
-      
     </div>
   );
 }

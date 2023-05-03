@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { HiDotsVertical } from "react-icons/hi";
 import { MdOutlineAutoDelete } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
+import { RotatingLines } from "react-loader-spinner";
 
 export default function Guruxlar() {
   const linkStyle = {
@@ -13,7 +14,7 @@ export default function Guruxlar() {
   };
   const [groupData, setGroupData] = useState([]);
   const [activ, setActiv] = useState(true);
-  const [id_put, setId_put] = useState(0)
+  const [id_put, setId_put] = useState(0);
 
   const [kursNomi, setKursNomi] = useState("");
   const [kurs, setKurs] = useState("Front-End");
@@ -23,30 +24,26 @@ export default function Guruxlar() {
   const [boshlanishDarsVaqti, setDarsVaqt] = useState("10:00");
   const [kursBoshSana, setKurSana] = useState("");
   const [kursTugashSana, setTugashSana] = useState("");
-  const [rost , setRost] = useState(false)
+  const [rost, setRost] = useState(false);
 
   useEffect(() => {
     axios
       .get("https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group")
       .then((ress) => {
-        console.log(ress.data, 'bu get data ');
+        console.log(ress.data, "bu get data ");
         ress.data.map((item, index) => {
-          item.icon = false
+          item.icon = false;
         });
         setGroupData(ress.data);
       })
       .catch((err) => {
         console.log(err);
       });
-    
-     
   }, [rost]);
 
-
- function Yuborish_btn() {
-     axios
-      .post("https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group", 
-      {
+  function Yuborish_btn() {
+    axios
+      .post("https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group", {
         name: kursNomi,
         teacher: oqituvchi,
         time: boshlanishDarsVaqti,
@@ -57,76 +54,77 @@ export default function Guruxlar() {
         status: true,
         count: true,
         xona: xona,
-        icon: false
+        icon: false,
       })
       .then((ress) => {
         console.log(ress, "post");
-        let post_data = [...groupData]
-        post_data.push(ress.data)
-        setGroupData(post_data)
-        
-        setKurSana('')
-        setTugashSana('')
+        let post_data = [...groupData];
+        post_data.push(ress.data);
+        setGroupData(post_data);
+
+        setKurSana("");
+        setTugashSana("");
       })
       .catch((err) => {
         console.log(err);
       })
       .finally(() => {
-        setKursNomi('')
+        setKursNomi("");
       });
   }
 
   function Delete(id, index) {
     axios
-    .delete(`https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group/${id}`)
-    .then(ress => {
-      console.log(ress.data);
-    let  filter_data = groupData.filter((item, index) => {
-        return (item.id != id)
-       })
-       setGroupData(filter_data) 
-    })
-    .catch(err => {
-      console.log(err);
-    })
-     let current = [...groupData];
-     current[index].icon = false;
-     setGroupData(current);
-    }
-
-    function Edit_off() {
-      axios
-      .put(`https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group/${id_put}`,
-      {
-        name: kursNomi,
-        teacher: oqituvchi,
-        time: boshlanishDarsVaqti,
-        days: kun,
-        kurs: kurs,
-        bosh_sana: kursBoshSana,
-        tugash_sana: kursTugashSana,
-        count: true,
-        xona: xona,
-        icon: false
+      .delete(`https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group/${id}`)
+      .then((ress) => {
+        console.log(ress.data);
+        let filter_data = groupData.filter((item, index) => {
+          return item.id != id;
+        });
+        setGroupData(filter_data);
       })
-
-      .then(ress => {
-        console.log(ress.data)
-        
-      })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
-      })
-      window.location.reload(true)
-    }
+      });
+    let current = [...groupData];
+    current[index].icon = false;
+    setGroupData(current);
+  }
 
-    function Edit(id,index) {
-      let current = [...groupData];
-      current[index].icon = false;
-      setId_put(id)
-      setGroupData(groupData);
-    }
-  
+  function Edit_off() {
+    axios
+      .put(
+        `https://644a7136a8370fb3214ec646.mockapi.io/nimadr/group/${id_put}`,
+        {
+          name: kursNomi,
+          teacher: oqituvchi,
+          time: boshlanishDarsVaqti,
+          days: kun,
+          kurs: kurs,
+          bosh_sana: kursBoshSana,
+          tugash_sana: kursTugashSana,
+          count: true,
+          xona: xona,
+          icon: false,
+        }
+      )
+
+      .then((ress) => {
+        console.log(ress.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    window.location.reload(true);
+  }
+
+  function Edit(id, index) {
+    let current = [...groupData];
+    current[index].icon = false;
+    setId_put(id);
+    setGroupData(groupData);
+  }
+
   function activee() {
     setActiv(!activ);
   }
@@ -135,9 +133,9 @@ export default function Guruxlar() {
     setActiv(!activ);
   }
 
-    function button_icon(index) {
-      let current = [...groupData];
-      current[index].icon = true;
+  function button_icon(index) {
+    let current = [...groupData];
+    current[index].icon = true;
     setGroupData(current);
   }
 
@@ -190,11 +188,11 @@ export default function Guruxlar() {
         <tbody>
           {groupData ? (
             groupData.map((item, index) => {
-              return (item.status) ? (
+              return item.status ? (
                 <tr
                   value={item}
                   className={activ ? "" : "d-none"}
-                  style={{ position: "relative", alignItems: 'center' }}
+                  style={{ position: "relative", alignItems: "center" }}
                 >
                   <td className="item">{item.id}</td>
                   <td className="item width_name">
@@ -209,7 +207,11 @@ export default function Guruxlar() {
                   <td className="item">{item.teacher}</td>
                   <td className="item">{item.time}</td>
                   <td className="item">{item.days}</td>
-                  <td className="item" style={{ cursor: "pointer" }} onClick={() => button_icon(index)} >
+                  <td
+                    className="item"
+                    style={{ cursor: "pointer" }}
+                    onClick={() => button_icon(index)}
+                  >
                     <p className="icon">
                       <HiDotsVertical />
                     </p>
@@ -262,7 +264,7 @@ export default function Guruxlar() {
                   <div className={item.icon ? "list" : "d-none"}>
                     <p
                       style={{ cursor: "pointer" }}
-                      onClick={() => Delete(item.id,index)}
+                      onClick={() => Delete(item.id, index)}
                       className="delete"
                     >
                       <span className="delet_icon">
@@ -270,9 +272,14 @@ export default function Guruxlar() {
                       </span>{" "}
                       Delete
                     </p>
-                    <p style={{ cursor: "pointer" }} className="edit"  onClick={() => Edit(item.id,index)}  data-bs-toggle="offcanvas"
+                    <p
+                      style={{ cursor: "pointer" }}
+                      className="edit"
+                      onClick={() => Edit(item.id, index)}
+                      data-bs-toggle="offcanvas"
                       data-bs-target="#offcanvasRight"
-                      aria-controls="offcanvasRight">
+                      aria-controls="offcanvasRight"
+                    >
                       <span className="delet_icon">
                         <FiEdit />{" "}
                       </span>{" "}
@@ -283,7 +290,15 @@ export default function Guruxlar() {
               );
             })
           ) : (
-            <>lodaing...</>
+            <>
+              <RotatingLines
+                strokeColor="grey"
+                strokeWidth="5"
+                animationDuration="0.75"
+                width="96"
+                visible={true}
+              />
+            </>
           )}
         </tbody>
       </table>
@@ -329,7 +344,7 @@ export default function Guruxlar() {
                 Kurs tanlash
               </label>
               <select
-              defaultValue={"front-end"}
+                defaultValue={"front-end"}
                 class="form-select select_guruh"
                 onChange={(val) => setKurs(val.target.value)}
               >
@@ -347,7 +362,7 @@ export default function Guruxlar() {
                 O'qituvchini tanlang
               </label>
               <select
-              defaultValue={'Zufarbek Abdurahmonov'}
+                defaultValue={"Zufarbek Abdurahmonov"}
                 class="form-select select_guruh"
                 onChange={(val) => setOqituvchi(val.target.value)}
               >
@@ -370,10 +385,10 @@ export default function Guruxlar() {
                 class="form-select select_guruh"
                 onChange={(val) => setKun(val.target.value)}
               >
-                <option selected value='juft kunlar'>
+                <option selected value="juft kunlar">
                   Juft Kunlar
                 </option>
-                <option value='toq kunlar'>Toq kunlar</option>
+                <option value="toq kunlar">Toq kunlar</option>
               </select>
             </div>
 

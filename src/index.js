@@ -15,8 +15,6 @@ import Register from "./Components/Register/Register";
 import About from "./Components/About/About";
 import './i18n'
 import Homee from "./Home";
-
-// import { store } from "./Components/Store/Store";
 import Account from "./Components/Home/Account";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
