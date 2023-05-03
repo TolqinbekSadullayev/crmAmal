@@ -114,7 +114,7 @@ export default function Navbartop() {
               })}
             </h6>
             
-          <h6>
+          <h6 className="ms-3">
              {dateState.toLocaleString('en-US', {
                 hour: 'numeric',
                 minute: 'numeric',

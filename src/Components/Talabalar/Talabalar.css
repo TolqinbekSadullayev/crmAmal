@@ -1,0 +1,55 @@
+.gg:hover{
+    cursor: pointer;
+    background-color: blueviolet;
+    color: white;
+    width: 140px;
+    height: 35px;
+    border-radius: 12px;
+    border-top: 2px solid;
+}
+
+.flex{
+    display: flex;
+}
+
+.gk{
+    margin-left: 20px;
+}
+
+.gk:hover{
+    cursor: pointer;
+    background-color: blueviolet;
+    color: white;
+    width: 190px;
+    height: 35px;
+    border-radius: 12px;
+    border-top: 2px solid;
+}
+
+.class{
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 220px;
+    height: 40px;
+    /* margin-left: 700px; */
+    margin-top: 10px;
+}
+
+
+
+.ki{
+    width: 180px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    border-radius: 15px;
+    border: none;
+}
+
+.far{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
