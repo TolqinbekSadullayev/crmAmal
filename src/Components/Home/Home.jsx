@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Home.css";
 import Apex from "../Apexcharts/Apex";
 import lottie from "lottie-web";
@@ -6,7 +6,23 @@ import { TiGroup } from "react-icons/ti";
 import { FaUserGraduate } from "react-icons/fa";
 import { ImUserTie, ImUserMinus } from "react-icons/im";
 import Charts from "../SimpleRadarChart/Charts";
+import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 export default function Home() {
+  const { t, i18n } = useTranslation();
+  const [lang, setLang] = useState("En");
+  const changeLanguage = (til) => {
+    if (til === "Ru") {
+      setLang("Ru");
+    }
+    if (til === "En") {
+      setLang("En");
+    }
+    if (til === "Uz") {
+      setLang("Uz");
+    }
+    i18n.changeLanguage(til);
+  };
   return (
     <div className="">
       <div className="home_div">
@@ -18,7 +34,7 @@ export default function Home() {
             <ImUserTie />
           </div>
           <h1 className="list_son">56</h1>
-          <h6 className="list_name">Hodimlar</h6>
+          <h6 className="list_name">{t("N_Xodimlar")}</h6>
         </div>
         <div className="talabalar">
           <div
@@ -28,7 +44,7 @@ export default function Home() {
             <FaUserGraduate />
           </div>
           <h1 className="list_son_ta">258</h1>
-          <h6 className="list_name_talabalar">Faol talabalar</h6>
+          <h6 className="list_name_talabalar">{t("Ftalabalar")}</h6>
         </div>
         <div className="guruhlar">
           <div
@@ -38,7 +54,7 @@ export default function Home() {
             <TiGroup />
           </div>
           <h1 className="list_son_gr">135</h1>
-          <h6 className="list_name_gr">Guruhlar</h6>
+          <h6 className="list_name_gr">{t("N_gurux")}</h6>
         </div>
         <div className="qarzdorlar">
           <div
@@ -48,7 +64,7 @@ export default function Home() {
             <ImUserMinus />
           </div>
           <h1 className="list_son_qarz">56</h1>
-          <h6 className="list_name_qarz">Qarzdorlar</h6>
+          <h6 className="list_name_qarz">{t("Qarzdor")}</h6>
         </div>
       </div>
 

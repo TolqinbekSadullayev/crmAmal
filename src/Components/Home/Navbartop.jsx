@@ -159,7 +159,7 @@ export default function Navbartop() {
                 colors="primary:#ffffff,secondary:#ffffff"
                 style={{ width: "50px", height: "50px" }}
               ></lord-icon>
-              <h5 className="userName">User Name</h5>
+              <h5 className="userName">{t("User_name")}</h5>
             </div>
           </Link>
         </div>

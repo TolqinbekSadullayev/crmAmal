@@ -3,10 +3,13 @@
     "Tili":"Til",
     "N_bosh": "Bosh sahifa",
     "N_gurux": "Guruxlar",
-    "N_Xodimlar": "Xodimlar",
+    "N_Xodimlar": "Hodimlar",
     "N_xonalar": "Xonalar",
     "N_Talabalar": "Talabalar",
     "N_Moliya": "Moliya",
     "N_chiqish": "Chiqish",
-    "N_about": "Jamoa haqida"
+    "N_about": "Jamoa haqida",
+    "User_name": "Foydalanuvchi",
+    "Ftalabalar": "Faol talabalar",
+    "Qarzdor": "Qarzdorlar"
 }

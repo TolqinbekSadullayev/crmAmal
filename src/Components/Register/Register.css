@@ -154,3 +154,6 @@ body {
 .social-login-icon:hover{
 	transform: scale(1.5);	
 }
+.error-message {
+	color: red;
+  }
