@@ -1,0 +1,116 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.onee {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.twoo {
+    display: flex;
+    flex-direction: column;
+}
+
+.sri {
+    display: flex;
+    flex-direction: column;
+}
+
+.btnnn {
+    width: 186px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #7338AC;
+    padding: 0 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+    color: white;
+
+}
+
+.btnn {
+    width: 118px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #7338AC;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+   
+}
+
+.xona {
+    margin-left: 15px;
+    width: 148px;
+    font-size: 40px;
+    font-weight: 600;
+}
+.table{
+    border: 1px solid rgba(103, 102, 102, 0.284);
+    background-color: rgba(241, 240, 240, 0.956);
+    height: 50px;
+    margin: -1px 0;
+    
+}
+.table td{
+    border-bottom: none;
+}
+.icon{
+    font-size: 20px;
+}
+
+.list{
+    position: absolute;
+    border: 1px solid #c0bebe4a;
+    right: 82px;
+    top: 272px;
+    z-index: 999;
+    border-radius: 10px;
+    background-color: #fbf8f8 !important;
+    width: 135px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.delete{
+    font-weight: 600;
+    margin: 0;
+    padding: 2px 4px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.delet_icon{
+    color: #693599;
+}
+
+.edit{
+    font-weight: 600;
+    padding: 2px 4px;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.table_title {
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 19px !important;
+    padding: 18px 27px 14px 31px !important;
+}
+.iconn{
+    color: red;
+}
+.stol{
+    justify-content: center;
+    text-align: center;
+    background-color: #7338AC;
+    
+}
+.sigim{
+    background-color: aqua;
+    width: 200px;
+}
