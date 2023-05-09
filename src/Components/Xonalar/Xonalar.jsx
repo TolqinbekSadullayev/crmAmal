@@ -71,7 +71,7 @@ export default function Xonalar() {
 
   return (
     <div>
-      <div className="row d-flex my-5">
+      <div className="row roww d-flex my-5">
         <div className="col-3">
           <h1 className='xona'>Xonalar</h1>
         </div>
@@ -102,7 +102,7 @@ export default function Xonalar() {
         </div>
       </div>
       <div>
-        <table className='table'>
+        <table className='tablee'>
           <tr style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "850px", marginLeft: "50px" }}>
             <th>Xonani nomi</th>
             <th className='sigim'>xona sig'imi</th>

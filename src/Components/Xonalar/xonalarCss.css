@@ -1,4 +1,4 @@
-.row {
+.roww {
     display: flex;
     justify-content: space-between;
 }
@@ -53,14 +53,14 @@
     font-size: 40px;
     font-weight: 600;
 }
-.table{
+.tablee{
     border: 1px solid rgba(103, 102, 102, 0.284);
     background-color: rgba(241, 240, 240, 0.956);
     height: 50px;
     margin: -1px 0;
     
 }
-.table td{
+.tablee td{
     border-bottom: none;
 }
 .icon{
