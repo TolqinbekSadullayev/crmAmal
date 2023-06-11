@@ -11,7 +11,7 @@ export default function About() {
               <h2 id="h2">To'lqinbek Sadullayev</h2>
               <div class="icons">
                 <a
-                  href="https://www.youtube.com/tolqinbeksadullayev/"
+                  href="https://www.youtube.com/@tolqin_sadullayev/"
                   target="_blank"
                 >
                   <i class="fa fa-youtube" aria-hidden="true"></i>
